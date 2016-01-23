@@ -1,4 +1,6 @@
-import babelpolyfill from 'babel-polyfill';
+/*eslint-disable */
+import 'babel-polyfill';
+/*eslint-enable */
 
 import Koa from 'koa';
 const app = new Koa();
@@ -11,9 +13,8 @@ import { readFileSync } from 'fs';
 
 router.post('/',
   async (ctx, next) => {
-    console.log(ctx.request.body);
     if (!ctx.request.body || !ctx.request.body.user_id) {
-       return ctx.status = 400;
+      return ctx.status = 400;
     }
     await handleAuthRequest(ctx);
 
@@ -34,7 +35,7 @@ async function handleAuthRequest(ctx) {
 }
 
 async function isUserBlacklisted(userId) {
-  const bannedUsers = readFileSync('file.txt').toString().split('\n');
+  const bannedUsers = readFileSync(process.env.BLACKLISTED_USERS_FILE || 'banned_users.txt').toString().split('\n');
   return (bannedUsers.indexOf(userId) !== -1);
 }
 
@@ -43,3 +44,5 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.listen(process.env.PORT || 3000);
+
+export default app;
