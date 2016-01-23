@@ -26,7 +26,10 @@ describe('Using POST',() => {
     request
       .post('/')
       .send({ user_id: '123'})
-      .expect(401)
+      .expect(401, {
+        blacklisted: true
+      })
+      .expect('Content-Type', /json/)
       .end(done);
   });
 
@@ -34,7 +37,10 @@ describe('Using POST',() => {
     request
       .post('/')
       .send({ user_id: 'not-banned'})
-      .expect(200)
+      .expect(200, {
+        blacklisted: false
+      })
+      .expect('Content-Type', /json/)
       .end(done);
   });
 });
