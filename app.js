@@ -9,7 +9,7 @@ import Router from 'koa-router';
 const router = new Router();
 
 import bodyParser from 'koa-bodyparser';
-import { readFileSync } from 'fs';
+import { readFile } from 'fs';
 
 router.post('/',
   async (ctx, next) => {
@@ -34,8 +34,20 @@ async function handleAuthRequest(ctx) {
   ctx.body = JSON.stringify(response);
 }
 
+async function readFileAsync(file) {
+  return new Promise(resolve => {
+    readFile(file, 'utf8', (err, data) => {
+      resolve(data);
+    });
+  });
+}
+
 async function isUserBlacklisted(userId) {
-  const bannedUsers = readFileSync(process.env.BLACKLISTED_USERS_FILE || 'banned_users.txt').toString().split('\n');
+  const bannedUsersFile = await readFileAsync(process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
+  if (!bannedUsersFile) {
+    return false;
+  }
+  const bannedUsers = bannedUsersFile.toString().split('\n');
   return (bannedUsers.indexOf(userId) !== -1);
 }
 
