@@ -115,6 +115,14 @@ Please make sure they all pass and add new ones when you develop new stuff! :smi
 Since this is a blacklist solution, a planned future is to validate the supplied user id against the buyers of the premium plugin.
 Only when it's on the list, the plugin is allowed to start (as long, as the user is not blacklisted).
 
+The following document query can be used to retrieve an array of all user id's who bought the plugin:
+````javascript
+let buyers = Array.from(document.querySelector('.memberList').querySelectorAll('a.username'));
+buyers.forEach((elem, index, arr) => {
+  arr[index] = parseInt(elem.pathname.replace(/\/members\/[-_a-zA-Z0-9]+\./, '').replace('/', ''));
+});
+````
+
 The project is written using bleeding edge software. I'm trying my best to keep it updated.
 [Greenkeeper](http://greenkeeper.io) is helping me to do so, by making pull request for dependency updates. Thanks for this great service! :rocket:
 
