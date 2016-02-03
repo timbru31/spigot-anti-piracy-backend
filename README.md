@@ -90,6 +90,49 @@ Per default the app starts on port 3000 and looks for a banned_users.txt in the 
 
 It's up to you, if you would like to spin the service up with e.g. a linux start script.
 
+For example here is an upstart script which runs the script via [forever](https://github.com/foreverjs/forever) as a non privileged user.
+You need to install forever first
+````shell
+npm i -g forever
+````
+
+You can read more about upstart [here](http://upstart.ubuntu.com/cookbook)
+
+(Script was inspired by [http://technosophos.com/2013/03/06/how-use-ubuntus-upstart-control-nodejs-forever.html](http://technosophos.com/2013/03/06/how-use-ubuntus-upstart-control-nodejs-forever.html))
+
+````
+description "Spigot Anti-Piracy Backend Server"
+author "timbru31"
+
+# Start up when the system hits any normal runlevel, and
+# shuts down when the system goes to shutdown or reboot.
+start on filesystem or runlevel [2345]
+stop on runlevel [06]
+
+# IMPORTANT: You will want to use this with Forever. It
+# tells Upstart that forever is going to fork after it
+# starts.
+expect fork
+
+setuid example
+# The user's home directory
+env HOME=/home/example
+env PORT=3005
+env BLACKLISTED_USERS_FILE=/home/example/spigot-anti-piracy-backend/banned_users.txt
+
+# automatically respawn
+respawn
+respawn limit 99 5
+
+# Send error messages to the console. Useful for debugging.
+#console output
+
+script
+  cd $HOME
+  exec forever start spigot-anti-piracy-backend/dist/app.js
+end script
+````
+
 ### Development
 
 You can watch the ``app.js`` for file changes via the task
