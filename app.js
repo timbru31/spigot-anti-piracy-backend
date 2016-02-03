@@ -1,6 +1,6 @@
-/*eslint-disable */
+/* eslint-disable */
 import 'babel-polyfill';
-/*eslint-enable */
+/* eslint-enable */
 
 import Koa from 'koa';
 const app = new Koa();
@@ -10,6 +10,13 @@ const router = new Router();
 
 import bodyParser from 'koa-bodyparser';
 import { readFile } from 'fs';
+
+import * as winston from 'winston';
+const logger = new winston.Logger();
+logger.add(winston.transports.File, {
+  filename: process.env.LOG_FILE || 'request.log'
+});
+logger.add(winston.transports.Console);
 
 router.post('/',
   async (ctx, next) => {
@@ -30,6 +37,7 @@ async function handleAuthRequest(ctx) {
   if (blacklisted) {
     ctx.status = 401;
   }
+  logger.info('user %s currently blacklisted? %s', userId, blacklisted);
   ctx.set('Content-Type', 'application/json');
   ctx.body = JSON.stringify(response);
 }
