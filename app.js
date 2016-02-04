@@ -14,7 +14,10 @@ import { readFile } from 'fs';
 import * as winston from 'winston';
 const logger = new winston.Logger();
 logger.add(winston.transports.File, {
-  filename: process.env.LOG_FILE || 'request.log'
+  filename: process.env.LOG_FILE || 'request.log',
+  maxFiles: 5,
+  maxsize: 5000000,
+  tailable: true
 });
 logger.add(winston.transports.Console);
 
