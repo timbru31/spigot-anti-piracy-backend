@@ -1,8 +1,8 @@
 # spigot-anti-piracy-backend
 [![Build Status](https://travis-ci.org/timbru31/spigot-anti-piracy-backend.svg?branch=master)](https://travis-ci.org/timbru31/spigot-anti-piracy-backend)
+[![Code Climate](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/gpa.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend)
 [![Dependency Status](https://david-dm.org/timbru31/spigot-anti-piracy-backend.svg)](https://david-dm.org/timbru31/spigot-anti-piracy-backend)
 [![devDependency Status](https://david-dm.org/timbru31/spigot-anti-piracy-backend/dev-status.svg)](https://david-dm.org/timbru31/spigot-anti-piracy-backend#info=devDependencies)
-[![Code Climate](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/gpa.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend)
 [![Test Coverage](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/coverage.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/coverage)
 [![Coverage Status](https://coveralls.io/repos/github/timbru31/spigot-anti-piracy-backend/badge.svg?branch=master)](https://coveralls.io/github/timbru31/spigot-anti-piracy-backend?branch=master)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -85,8 +85,14 @@ Just use
 $ npm run start
 ````
 
-You can supply the ``port`` you want to use via the ``PORT`` env variable and the blacklist via the ``BLACKLISTED_USERS_FILE`` env variable.
-Per default the app starts on port 3000 and looks for a banned_users.txt in the same folder.
+Configuration via enviorment variables
+
+| Enviroment Variable | Default | Description |
+|:------------- |:------------- |:----- |
+| PORT | 3000 | Port to run the app on |
+| BLACKLISTED_USERS_FILE | ./banned_users.txt | Blacklist file |
+| LOG_FILE | ./request.log | Log file for requests |
+| PROXY | false| Tells Koa to run on proxy mode, for support for X-Forwarded Headers |
 
 It's up to you, if you would like to spin the service up with e.g. a linux start script.
 
@@ -147,7 +153,7 @@ $ npm run test
 ````
 
 The code is linted using ``ESLint`` using the ``babel-eslint`` parser.
-Keep the warnin to zero. :smile:
+Keep the warnings to zero. :smile:
 
 Please make sure they all pass and add new ones when you develop new stuff! :smile:
 

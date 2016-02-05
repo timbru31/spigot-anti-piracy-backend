@@ -4,6 +4,7 @@ import 'babel-polyfill';
 
 import Koa from 'koa';
 const app = new Koa();
+app.proxy = process.env.PROXY || false;
 
 import Router from 'koa-router';
 const router = new Router();
@@ -12,9 +13,10 @@ import bodyParser from 'koa-bodyparser';
 import { readFile } from 'fs';
 
 import * as winston from 'winston';
+
 const logger = new winston.Logger();
 logger.add(winston.transports.File, {
-  filename: process.env.LOG_FILE || 'request.log',
+  filename: process.env.LOG_FILE || `${__dirname}/request.log`,
   maxFiles: 5,
   maxsize: 5000000,
   tailable: true
@@ -40,7 +42,7 @@ async function handleAuthRequest(ctx) {
   if (blacklisted) {
     ctx.status = 401;
   }
-  logger.info('user %s currently blacklisted? %s', userId, blacklisted);
+  logger.info('request from %s for user %s --> backlisted %s', ctx.request.ip, userId, blacklisted);
   ctx.set('Content-Type', 'application/json');
   ctx.body = JSON.stringify(response);
 }
