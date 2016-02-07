@@ -1,0 +1,17 @@
+machine:
+  node:
+    version: 4.2.2
+
+dependencies:
+  pre:
+    - nvm install 4.2
+    - nvm install 5.5
+
+  override:
+    - nvm use 4.2 && npm install
+    - nvm use 5.5 && npm install
+
+test:
+  override:
+    - nvm use 4.2 && npm run test
+    - nvm use 5.5 && npm run test
