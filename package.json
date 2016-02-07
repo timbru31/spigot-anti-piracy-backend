@@ -18,7 +18,7 @@
   },
   "author": "xGhOsTkiLLeRx",
   "dependencies": {
-    "babel-polyfill": "^6.3.14",
+    "babel-polyfill": "^6.5.0",
     "koa": "^2.0.0-alpha.3",
     "koa-bodyparser": "^3.0.0",
     "koa-router": "^7.0.1",
