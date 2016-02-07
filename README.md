@@ -176,3 +176,9 @@ The project is written using bleeding edge software. I'm trying my best to keep 
 [Greenkeeper](http://greenkeeper.io) is helping me to do so, by making pull request for dependency updates. Thanks for this great service! :rocket:
 
 When Node is ready for async/await, I'm planning to remove all the Babel stuff again. (as soon as Koa 2.0 becomes stable)
+
+## License
+This plugin is released under the
+*Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)* license.
+
+Please see [LICENSE.md](LICENSE.md) for more information.
