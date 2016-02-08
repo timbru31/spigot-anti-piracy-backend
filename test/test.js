@@ -1,5 +1,6 @@
 process.env.BLACKLISTED_USERS_FILE = `${__dirname}/blacklisted_users.txt`;
 
+import 'babel-polyfill';
 import app from '../app';
 import supertest from 'supertest';
 
