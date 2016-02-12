@@ -8,7 +8,7 @@
     "babel-node": "./node_modules/babel-cli/bin/babel-node.js",
     "build": "babel app.js -d dist",
     "coverage": "npm run babel-node -- ./node_modules/babel-istanbul/lib/cli.js cover _mocha",
-    "lint": "eslint --ignore-pattern dist/** .",
+    "lint": "eslint --ignore-pattern dist --ignore-pattern coverage .",
     "start": "node dist/app.js",
     "test": "mocha --compilers js:babel-core/register",
     "watch": "nodemon --exec npm run babel-node -- app.js"
@@ -38,8 +38,8 @@
     "eslint": "^2.0.0",
     "mocha": "^2.4.5",
     "nodemon": "^1.8.1",
-    "should": "^8.2.1",
-    "supertest": "^1.1.0"
+    "should": "^8.2.2",
+    "supertest": "^1.2.0"
   },
   "config": {
     "commitizen": {
