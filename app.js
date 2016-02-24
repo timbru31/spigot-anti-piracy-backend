@@ -1,7 +1,3 @@
-/* eslint-disable */
-import 'babel-polyfill';
-/* eslint-enable */
-
 import Koa from 'koa';
 const app = new Koa();
 app.proxy = process.env.PROXY || false;
@@ -23,22 +19,21 @@ logger.add(winston.transports.File, {
 });
 logger.add(winston.transports.Console);
 
-router.post('/',
-  async (ctx, next) => {
-    if (!ctx.request.body || !ctx.request.body.user_id) {
-      return ctx.status = 400;
-    }
-    await handleAuthRequest(ctx);
-
-    next();
+router.post('/', async (ctx, next) => {
+  if (!ctx.request.body || !ctx.request.body.user_id) {
+    return ctx.status = 400;
   }
-);
+  await handleAuthRequest(ctx);
+
+  next();
+});
 
 async function handleAuthRequest(ctx) {
   const userId = ctx.request.body.user_id;
   const blacklisted = await isUserBlacklisted(userId);
-  let response = new Object();
-  response.blacklisted = blacklisted;
+  const response = {
+    backlisted: blacklisted
+  };
   if (blacklisted) {
     ctx.status = 401;
   }
@@ -68,6 +63,10 @@ app.use(bodyParser());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-app.listen(process.env.PORT || 3000);
+const server = app.listen(process.env.PORT || 3000, () => {
+  logger.info('Spigot Anti Piracy Backend listening at http://%s:%s', server.address().address, server.address().port);
+  logger.info('Logging to %s', process.env.LOG_FILE || `${__dirname}/request.log`);
+  logger.info('Using %s for blacklisted users', process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
+});
 
 export default app;
