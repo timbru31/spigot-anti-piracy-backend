@@ -4,6 +4,7 @@
     "stage-3"
   ],
   "plugins": [
-    "transform-async-to-generator"
+    "transform-async-to-generator",
+    "transform-runtime"
   ]
 }

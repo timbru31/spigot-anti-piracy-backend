@@ -62,8 +62,8 @@ You recieve a JSON with either blacklisted true or false:
 
 ### Installation
 
-Ensure that your server you wish to run the piracy backend with is running at least **Node 4.2**
-(TravisCI is testing against 4.2 and 5.5)
+Ensure that your server you wish to run the piracy backend with is running at least **Node 4**
+(TravisCI is testing against 4 and 5)
 
 ````shell
 $ git clone https://github.com/timbru31/spigot-anti-piracy-backend.git
