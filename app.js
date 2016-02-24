@@ -32,7 +32,7 @@ async function handleAuthRequest(ctx) {
   const userId = ctx.request.body.user_id;
   const blacklisted = await isUserBlacklisted(userId);
   const response = {
-    backlisted: blacklisted
+    blacklisted: blacklisted
   };
   if (blacklisted) {
     ctx.status = 401;
