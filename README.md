@@ -105,11 +105,7 @@ Configuration via enviorment variables
 
 It's up to you, if you would like to spin the service up with e.g. a linux start script.
 
-For example here is an upstart script which runs the script via [forever](https://github.com/foreverjs/forever) as a non privileged user.
-You need to install forever first
-````shell
-npm i -g forever
-````
+For example here is an upstart script which runs the script as a non privileged user.
 
 You can read more about upstart [here](http://upstart.ubuntu.com/cookbook)
 
@@ -124,16 +120,11 @@ author "timbru31"
 start on filesystem or runlevel [2345]
 stop on runlevel [06]
 
-# IMPORTANT: You will want to use this with Forever. It
-# tells Upstart that forever is going to fork after it
-# starts.
-expect fork
-
 setuid example
 # The user's home directory
 env HOME=/home/example
 env PORT=3005
-env BLACKLISTED_USERS_FILE=/home/example/spigot-anti-piracy-backend/banned_users.txt
+env BLACKLISTED_USERS_FILE=/home/example/banned_users.txt
 
 # automatically respawn
 respawn
@@ -143,8 +134,7 @@ respawn limit 99 5
 #console output
 
 script
-  cd $HOME
-  exec forever start spigot-anti-piracy-backend/dist/app.js
+  spigot-anti-piracy-backend
 end script
 ````
 
