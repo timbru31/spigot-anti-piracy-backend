@@ -8,6 +8,7 @@
 [![Test Coverage](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/coverage.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/coverage)
 [![Coverage Status](https://coveralls.io/repos/github/timbru31/spigot-anti-piracy-backend/badge.svg?branch=master)](https://coveralls.io/github/timbru31/spigot-anti-piracy-backend?branch=master)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![npm](https://img.shields.io/npm/v/spigot-anti-piracy-backend.svg)](https://www.npmjs.com/package/spigot-anti-piracy-backend)
 
 #### A Koa.js powered Node.js backend to blacklist leaked Spigot Premium plugins
 
@@ -65,16 +66,21 @@ You recieve a JSON with either blacklisted true or false:
 Ensure that your server you wish to run the piracy backend with is running at least **Node 4**
 (TravisCI is testing against 4 and 5)
 
+
+#### Normal Installation
+
+````shell
+$ npm install -g spigot-anti-piracy-backend
+````
+
+(Optionally without the global flag)
+
+#### Development Installation
+
 ````shell
 $ git clone https://github.com/timbru31/spigot-anti-piracy-backend.git
 $ cd spigot-anti-piracy-backend
 $ npm install
-````
-
-For the first install, we need Babel to compile the code.
-
-````shell
-$ npm run build
 ````
 
 ### Usage
