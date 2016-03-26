@@ -81,6 +81,7 @@ $ npm install -g spigot-anti-piracy-backend
 $ git clone https://github.com/timbru31/spigot-anti-piracy-backend.git
 $ cd spigot-anti-piracy-backend
 $ npm install
+$ npm run build
 ````
 
 ### Usage
