@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import Koa from 'koa';
 const app = new Koa();
 app.proxy = process.env.PROXY || false;
