@@ -17,7 +17,8 @@ logger.add(winston.transports.File, {
   filename: process.env.LOG_FILE || `${__dirname}/request.log`,
   maxFiles: 5,
   maxsize: 5000000,
-  tailable: true
+  tailable: true,
+  json: process.env.JSON_LOG || true
 });
 logger.add(winston.transports.Console);
 
@@ -39,7 +40,11 @@ async function handleAuthRequest(ctx) {
   if (blacklisted) {
     ctx.status = 401;
   }
-  logger.info('request from %s for user %s --> backlisted %s', ctx.request.ip, userId, blacklisted);
+  logger.info('request from %s for user %s --> backlisted %s', ctx.request.ip, userId, blacklisted, {
+    userId: userId,
+    ip: ctx.request.ip,
+    blacklisted: blacklisted
+  });
   ctx.set('Content-Type', 'application/json');
   ctx.body = JSON.stringify(response);
 }

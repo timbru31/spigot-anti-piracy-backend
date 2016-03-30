@@ -102,6 +102,7 @@ Configuration via enviorment variables
 | BLACKLISTED_USERS_FILE | ./banned_users.txt | Blacklist file |
 | LOG_FILE | ./request.log | Log file for requests |
 | PROXY | false| Tells Koa to run on proxy mode, for support for X-Forwarded Headers |
+| JSON_LOG | true | Logs to the file in a JSON format, disable for human readable output |
 
 It's up to you, if you would like to spin the service up with e.g. a linux start script.
 
