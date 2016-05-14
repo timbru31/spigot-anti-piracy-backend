@@ -6,6 +6,7 @@ dependencies:
   pre:
     - nvm install 4
     - nvm install 5
+    - nvm install 6
 
   override:
     - nvm use 4 && npm install
