@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 4.3.1
+    version: 4.4.4
 
 dependencies:
   pre:
@@ -10,8 +10,10 @@ dependencies:
   override:
     - nvm use 4 && npm install
     - nvm use 5 && npm install
+    - nvm use 6 && npm install
 
 test:
   override:
     - nvm use 4 && npm run test
     - nvm use 5 && npm run test
+    - nvm use 6 && npm install

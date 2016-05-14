@@ -8,12 +8,13 @@ cache:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install -g npm
+  - node -v
+  - npm -v
   - npm install
 
 build: off
 
 test_script:
-  - node --version && npm --version
   - cmd: npm test
 
 environment:

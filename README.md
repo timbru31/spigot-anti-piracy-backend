@@ -64,7 +64,7 @@ You recieve a JSON with either blacklisted true or false:
 ### Installation
 
 Ensure that your server you wish to run the piracy backend with is running at least **Node 4**
-(TravisCI is testing against 4 and 5)
+This has been tested up to Node v6.1
 
 
 #### Normal Installation
