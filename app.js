@@ -40,7 +40,7 @@ async function handleAuthRequest(ctx) {
   if (blacklisted) {
     ctx.status = 401;
   }
-  logger.info('request from %s for user %s --> backlisted %s', ctx.request.ip, userId, blacklisted, {
+  logger.info('request from %s for user %s --> blacklisted %s', ctx.request.ip, userId, blacklisted, {
     userId: userId,
     ip: ctx.request.ip,
     blacklisted: blacklisted
