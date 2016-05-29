@@ -43,6 +43,7 @@ async function handleAuthRequest(ctx) {
   logger.info('request from %s for user %s --> blacklisted %s', ctx.request.ip, userId, blacklisted, {
     userId: userId,
     ip: ctx.request.ip,
+    port: ctx.request.headers['bukkit-server-port'],
     blacklisted: blacklisted
   });
   ctx.set('Content-Type', 'application/json');
