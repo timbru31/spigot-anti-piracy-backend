@@ -1,3 +1,21 @@
+<a name="0.5.2"></a>
+## [0.5.2](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.1...v0.5.2) (2016-05-29)
+
+
+### chore
+
+* add conventional-changelog-cli dependency ([0faa79e5100812b19cade879679c950afe8cdfd4](https://github.com/timbru31/spigot-anti-piracy-backend/commit/0faa79e5100812b19cade879679c950afe8cdfd4))
+
+### docs
+
+* add CHANGELOG.md ([39e160f90c85651630792053cbe72dff6201a10b](https://github.com/timbru31/spigot-anti-piracy-backend/commit/39e160f90c85651630792053cbe72dff6201a10b))
+
+### feat
+
+* log server port if set in headers ([d1aa179f26e1e7cac5e9f8697cde47d4f367c34e](https://github.com/timbru31/spigot-anti-piracy-backend/commit/d1aa179f26e1e7cac5e9f8697cde47d4f367c34e))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.0...v0.5.1) (2016-05-25)
 
