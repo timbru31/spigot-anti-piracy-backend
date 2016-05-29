@@ -8,6 +8,7 @@
 [![Test Coverage](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/coverage.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/coverage)
 [![Coverage Status](https://coveralls.io/repos/github/timbru31/spigot-anti-piracy-backend/badge.svg?branch=master)](https://coveralls.io/github/timbru31/spigot-anti-piracy-backend?branch=master)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE.md)
 [![npm](https://img.shields.io/npm/v/spigot-anti-piracy-backend.svg)](https://www.npmjs.com/package/spigot-anti-piracy-backend)
 
 #### A Koa.js powered Node.js backend to blacklist leaked Spigot Premium plugins
