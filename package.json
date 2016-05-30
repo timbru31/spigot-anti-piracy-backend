@@ -45,7 +45,7 @@
     "eslint": "~2.11.0",
     "mocha": "~2.5.3",
     "nodemon": "~1.9.2",
-    "should": "~8.4.0",
+    "should": "~9.0.0",
     "supertest": "~1.2.0"
   },
   "config": {
