@@ -1,6 +1,6 @@
 {
   "name": "spigot-anti-piracy-backend",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "A koajs application to blacklist leaked plugins",
   "bin": "./dist/app.js",
   "main": "app.js",
@@ -29,23 +29,23 @@
     "babel-plugin-transform-runtime": "~6.9.0",
     "babel-preset-es2015": "~6.9.0",
     "babel-preset-stage-3": "~6.11.0",
-    "babel-runtime": "~6.9.1",
+    "babel-runtime": "~6.9.2",
     "koa": "~2.0.0",
     "koa-bodyparser": "~3.1.0",
     "koa-router": "~7.0.1",
     "winston": "~2.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "~6.1.0",
+    "babel-eslint": "~6.1.2",
     "babel-istanbul": "~0.11.0",
-    "codeclimate-test-reporter": "~0.3.1",
-    "conventional-changelog-cli": "^1.2.0",
-    "coveralls": "~2.11.9",
+    "codeclimate-test-reporter": "~0.3.3",
+    "conventional-changelog-cli": "~1.2.0",
+    "coveralls": "~2.11.11",
     "cz-customizable": "~4.0.0",
-    "eslint": "~2.13.0",
+    "eslint": "~3.0.1",
     "mocha": "~2.5.3",
     "nodemon": "~1.9.2",
-    "should": "~9.0.0",
+    "should": "~9.0.2",
     "supertest": "~1.2.0"
   },
   "config": {

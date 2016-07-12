@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 
 import Koa from 'koa';
 const app = new Koa();
@@ -51,7 +51,7 @@ async function handleAuthRequest(ctx) {
 }
 
 async function readFileAsync(file) {
-  return new Promise(resolve => {
+  return await new Promise(resolve => {
     readFile(file, 'utf8', (err, data) => {
       resolve(data);
     });
