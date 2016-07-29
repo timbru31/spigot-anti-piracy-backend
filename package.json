@@ -42,7 +42,7 @@
     "conventional-changelog-cli": "~1.2.0",
     "coveralls": "~2.11.11",
     "cz-customizable": "~4.0.0",
-    "eslint": "~3.1.0",
+    "eslint": "~3.2.0",
     "mocha": "~2.5.3",
     "nodemon": "~1.10.0",
     "should": "~10.0.0",
