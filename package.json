@@ -36,7 +36,7 @@
     "winston": "~2.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "~6.1.2",
+    "babel-eslint": "~7.0.0",
     "babel-istanbul": "~0.11.0",
     "codeclimate-test-reporter": "~0.3.3",
     "conventional-changelog-cli": "~1.2.0",
