@@ -38,7 +38,7 @@
   "devDependencies": {
     "babel-eslint": "~7.0.0",
     "babel-istanbul": "~0.11.0",
-    "codeclimate-test-reporter": "~0.3.3",
+    "codeclimate-test-reporter": "~0.4.0",
     "conventional-changelog-cli": "~1.2.0",
     "coveralls": "~2.11.11",
     "cz-customizable": "~4.0.0",
