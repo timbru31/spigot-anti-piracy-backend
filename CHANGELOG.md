@@ -1,3 +1,18 @@
+<a name="0.5.3"></a>
+## [0.5.3](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.2...v0.5.3) (2016-10-07)
+
+
+### chore
+
+* updated dependencies ([1e814c022798168974bfb7278f381023920dd918](https://github.com/timbru31/spigot-anti-piracy-backend/commit/1e814c022798168974bfb7278f381023920dd918))
+* updated dependencies ([17578633ec5b3cbfdd9674180a55cfee9989de69](https://github.com/timbru31/spigot-anti-piracy-backend/commit/17578633ec5b3cbfdd9674180a55cfee9989de69))
+
+### docs
+
+* add license badge ([8f8b92b5cbb77daf46c3d9e2dd09762a01f2f7b7](https://github.com/timbru31/spigot-anti-piracy-backend/commit/8f8b92b5cbb77daf46c3d9e2dd09762a01f2f7b7))
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.1...v0.5.2) (2016-05-29)
 
@@ -5,6 +20,7 @@
 ### chore
 
 * add conventional-changelog-cli dependency ([0faa79e5100812b19cade879679c950afe8cdfd4](https://github.com/timbru31/spigot-anti-piracy-backend/commit/0faa79e5100812b19cade879679c950afe8cdfd4))
+* release 0.5.2 ([6fa2e2aae906da70908249c1cfcf1280a1c13160](https://github.com/timbru31/spigot-anti-piracy-backend/commit/6fa2e2aae906da70908249c1cfcf1280a1c13160))
 
 ### docs
 
