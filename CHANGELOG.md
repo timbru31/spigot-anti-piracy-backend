@@ -1,9 +1,26 @@
+<a name="0.5.4"></a>
+## [0.5.4](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.3...v0.5.4) (2016-11-25)
+
+
+### chore
+
+* bump version ([d43b6111e5c3304901328c51dc604cb0132e912c](https://github.com/timbru31/spigot-anti-piracy-backend/commit/d43b6111e5c3304901328c51dc604cb0132e912c))
+* test up to Node v7 ([6fcfd911a40d7c73f81beeb0a8b13da43f355f53](https://github.com/timbru31/spigot-anti-piracy-backend/commit/6fcfd911a40d7c73f81beeb0a8b13da43f355f53))
+* update dependencies ([c96a42b69cf518d5991fef54b0bd345e63447c31](https://github.com/timbru31/spigot-anti-piracy-backend/commit/c96a42b69cf518d5991fef54b0bd345e63447c31))
+
+### fix
+
+* quotes in .eslintrc ([60525bf0a769b85c4578fae2bb89159cf0667d35](https://github.com/timbru31/spigot-anti-piracy-backend/commit/60525bf0a769b85c4578fae2bb89159cf0667d35))
+
+
+
 <a name="0.5.3"></a>
 ## [0.5.3](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.2...v0.5.3) (2016-10-07)
 
 
 ### chore
 
+* release 0.5.3 ([23234687b5aec36ac262e65bfbbcb398e1ccbeae](https://github.com/timbru31/spigot-anti-piracy-backend/commit/23234687b5aec36ac262e65bfbbcb398e1ccbeae))
 * updated dependencies ([1e814c022798168974bfb7278f381023920dd918](https://github.com/timbru31/spigot-anti-piracy-backend/commit/1e814c022798168974bfb7278f381023920dd918))
 * updated dependencies ([17578633ec5b3cbfdd9674180a55cfee9989de69](https://github.com/timbru31/spigot-anti-piracy-backend/commit/17578633ec5b3cbfdd9674180a55cfee9989de69))
 
