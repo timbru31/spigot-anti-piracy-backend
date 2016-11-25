@@ -23,8 +23,8 @@
     "node": true,
     "mocha": true
   },
-  ecmaFeatures: {
-    modules: true
+  "ecmaFeatures": {
+    "modules": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
