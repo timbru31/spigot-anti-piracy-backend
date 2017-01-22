@@ -1,4 +1,5 @@
 # spigot-anti-piracy-backend
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/716c0578012b4237844e8ac680e0127c)](https://www.codacy.com/app/timbru31/spigot-anti-piracy-backend?utm_source=github.com&utm_medium=referral&utm_content=timbru31/spigot-anti-piracy-backend&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/timbru31/spigot-anti-piracy-backend.svg?branch=master)](https://travis-ci.org/timbru31/spigot-anti-piracy-backend)
 [![Circle CI](https://img.shields.io/circleci/project/timbru31/spigot-anti-piracy-backend.svg)](https://circleci.com/gh/timbru31/spigot-anti-piracy-backend)
 [![Build status](https://ci.appveyor.com/api/projects/status/asl8iebx2n19kv4y?svg=true)](https://ci.appveyor.com/project/timbru31/spigot-anti-piracy-backend)
