@@ -3,18 +3,18 @@
   "version": "0.5.4",
   "description": "A koajs application to blacklist leaked plugins",
   "bin": "./dist/app.js",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
     "babel-node": "./node_modules/babel-cli/bin/babel-node.js",
-    "build": "babel app.js -d dist",
+    "build": "babel ./src/app.js -d dist",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 -p eslint",
     "coverage": "npm run babel-node -- ./node_modules/babel-istanbul/lib/cli.js cover _mocha",
-    "lint": "eslint --ignore-pattern dist --ignore-pattern coverage .",
+    "lint": "eslint --ignore-pattern dist --ignore-pattern coverage ./src",
     "prepublish": "npm run build",
     "start": "node dist/app.js",
     "pretest": "npm run lint",
     "test": "mocha --compilers js:babel-core/register",
-    "watch": "nodemon --exec npm run babel-node -- app.js"
+    "watch": "nodemon --exec npm run babel-node -- ./src/app.js"
   },
   "engines": {
     "node": ">=4.2"
