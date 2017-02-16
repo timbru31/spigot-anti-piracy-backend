@@ -20,7 +20,7 @@
     "node": ">=4.2"
   },
   "author": {
-    "name": "xGhOsTkiLLeRx"
+    "name": "timbru31"
   },
   "dependencies": {
     "babel-cli": "~6.23.0",
@@ -53,7 +53,7 @@
       "path": "node_modules/cz-customizable"
     }
   },
-  "license": "CC-BY-NC-SA-4.0",
+  "license": "MIT",
   "repository": "timbru31/spigot-anti-piracy-backend",
   "bugs": {
     "url": "https://github.com/timbru31/spigot-anti-piracy-backend/issues"

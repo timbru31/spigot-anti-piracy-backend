@@ -9,7 +9,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/timbru31/spigot-anti-piracy-backend/badge.svg?branch=master)](https://coveralls.io/github/timbru31/spigot-anti-piracy-backend?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/716c0578012b4237844e8ac680e0127c)](https://www.codacy.com/app/timbru31/spigot-anti-piracy-backend?utm_source=github.com&utm_medium=referral&utm_content=timbru31/spigot-anti-piracy-backend&utm_campaign=badger)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE.md)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/spigot-anti-piracy-backend.svg)](https://www.npmjs.com/package/spigot-anti-piracy-backend)
 
 #### A Koa.js powered Node.js backend to blacklist leaked Spigot Premium plugins
@@ -179,8 +179,5 @@ The project is written using bleeding edge software. I'm trying my best to keep 
 
 When Node is ready for async/await, I'm planning to remove all the Babel stuff again. (as soon as Koa 2.0 becomes stable)
 
-## License
-This plugin is released under the
-*Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)* license.
-
-Please see [LICENSE.md](LICENSE.md) for more information.
+---
+Built by (c) Tim Brust and contributors. Released under the MIT license.
