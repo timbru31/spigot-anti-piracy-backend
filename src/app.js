@@ -35,16 +35,17 @@ async function handleAuthRequest(ctx) {
   const request = ctx.request;
   const body = request.body;
   const userId = body.user_id;
+  const ip = request.ip;
   const blacklisted = await isUserBlacklisted(userId);
   const response = {
-    blacklisted: blacklisted
+    blacklisted
   };
   if (blacklisted) {
     ctx.status = 401;
   }
-  logger.info('request from %s for user %s --> blacklisted %s', request.ip, userId, blacklisted, {
-    userId: userId,
-    ip: request.ip,
+  logger.info('request from %s for user %s --> blacklisted %s', ip, userId, blacklisted, {
+    userId,
+    ip,
     port: request.headers['bukkit-server-port'] || body.port,
     plugin: body.plugin,
     blacklisted
