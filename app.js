@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 
 import Koa from 'koa';
+import Router from 'koa-router';
+import bodyParser from 'koa-bodyparser';
+import { readFile } from 'fs';
+import * as winston from 'winston';
+
 const app = new Koa();
 app.proxy = process.env.PROXY || false;
 
-import Router from 'koa-router';
 const router = new Router();
-
-import bodyParser from 'koa-bodyparser';
-import { readFile } from 'fs';
-
-import * as winston from 'winston';
 
 const logger = new winston.Logger();
 logger.add(winston.transports.File, {
@@ -23,7 +22,8 @@ logger.add(winston.transports.File, {
 logger.add(winston.transports.Console);
 
 router.post('/', async (ctx, next) => {
-  if (!ctx.request.body || !ctx.request.body.user_id) {
+  const body = ctx.request.body;
+  if (!ctx.request.body || !body.user_id) {
     return ctx.status = 400;
   }
   await handleAuthRequest(ctx);
@@ -32,7 +32,9 @@ router.post('/', async (ctx, next) => {
 });
 
 async function handleAuthRequest(ctx) {
-  const userId = ctx.request.body.user_id;
+  const request = ctx.request;
+  const body = request.body;
+  const userId = body.user_id;
   const blacklisted = await isUserBlacklisted(userId);
   const response = {
     blacklisted: blacklisted
@@ -40,11 +42,12 @@ async function handleAuthRequest(ctx) {
   if (blacklisted) {
     ctx.status = 401;
   }
-  logger.info('request from %s for user %s --> blacklisted %s', ctx.request.ip, userId, blacklisted, {
+  logger.info('request from %s for user %s --> blacklisted %s', request.ip, userId, blacklisted, {
     userId: userId,
-    ip: ctx.request.ip,
-    port: ctx.request.headers['bukkit-server-port'],
-    blacklisted: blacklisted
+    ip: request.ip,
+    port: request.headers['bukkit-server-port'] || body.port,
+    plugin: body.plugin,
+    blacklisted
   });
   ctx.set('Content-Type', 'application/json');
   ctx.body = JSON.stringify(response);
