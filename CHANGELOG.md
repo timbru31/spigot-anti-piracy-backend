@@ -1,3 +1,29 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.3...v0.6.0) (2017-02-16)
+
+
+### Bug Fixes
+
+* quotes in .eslintrc ([60525bf](https://github.com/timbru31/spigot-anti-piracy-backend/commit/60525bf))
+* **package:** update babel-cli to version 6.22.0 ([14d6e5e](https://github.com/timbru31/spigot-anti-piracy-backend/commit/14d6e5e))
+* **package:** update babel-core to version 6.21.0 ([abf3011](https://github.com/timbru31/spigot-anti-piracy-backend/commit/abf3011))
+* **package:** update babel-core to version 6.22.1 ([85385b5](https://github.com/timbru31/spigot-anti-piracy-backend/commit/85385b5))
+* **package:** update babel-core to version 6.23.1 (#132) ([cad797e](https://github.com/timbru31/spigot-anti-piracy-backend/commit/cad797e))
+* **package:** update babel-plugin-transform-async-to-generator to version 6.22.0 ([dfcbe03](https://github.com/timbru31/spigot-anti-piracy-backend/commit/dfcbe03))
+* **package:** update babel-runtime to version 6.23.0 (#133) ([74523c5](https://github.com/timbru31/spigot-anti-piracy-backend/commit/74523c5))
+* **package:** update koa-router to version 7.1.0 ([a6db85e](https://github.com/timbru31/spigot-anti-piracy-backend/commit/a6db85e))
+
+
+### Features
+
+* log port from body and plugin name ([01439e4](https://github.com/timbru31/spigot-anti-piracy-backend/commit/01439e4))
+
+
+
 <a name="0.5.4"></a>
 ## [0.5.4](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.5.3...v0.5.4) (2016-11-25)
 
@@ -206,7 +232,3 @@
 
 <a name="0.1.0"></a>
 # 0.1.0 (2016-01-23)
-
-
-
-
