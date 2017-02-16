@@ -12,6 +12,7 @@
     "lint": "eslint --ignore-pattern dist --ignore-pattern coverage ./src",
     "prepublish": "npm run build",
     "start": "node dist/app.js",
+    "release": "standard-version",
     "pretest": "npm run lint",
     "test": "mocha --compilers js:babel-core/register",
     "watch": "nodemon --exec npm run babel-node -- ./src/app.js"
@@ -46,6 +47,7 @@
     "mocha": "~3.2.0",
     "nodemon": "~1.11.0",
     "should": "~11.2.0",
+    "standard-version": "~4.0.0",
     "supertest": "~3.0.0"
   },
   "config": {
