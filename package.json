@@ -7,7 +7,6 @@
   "scripts": {
     "babel-node": "./node_modules/babel-cli/bin/babel-node.js",
     "build": "babel ./src/app.js -d dist",
-    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 -p eslint",
     "coverage": "npm run babel-node -- ./node_modules/babel-istanbul/lib/cli.js cover _mocha",
     "lint": "eslint --ignore-pattern dist --ignore-pattern coverage ./src",
     "prepublish": "npm run build",
@@ -40,7 +39,6 @@
     "babel-eslint": "~7.1.1",
     "babel-istanbul": "~0.12.1",
     "codeclimate-test-reporter": "~0.4.1",
-    "conventional-changelog-cli": "~1.2.0",
     "coveralls": "~2.11.16",
     "cz-customizable": "~4.0.0",
     "eslint": "~3.15.0",
