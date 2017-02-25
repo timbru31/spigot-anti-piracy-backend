@@ -60,7 +60,7 @@ async function isUserBlacklisted(userId) {
     return false;
   }
   const bannedUsers = bannedUsersFile.toString().split('\n');
-  return (bannedUsers.indexOf(userId) !== -1);
+  return bannedUsers.includes(userId);
 }
 
 function readFileAsync(file) {
