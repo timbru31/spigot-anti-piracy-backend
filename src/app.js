@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import Koa from 'koa';
-import Router from 'koa-router';
-import bodyParser from 'koa-bodyparser';
-import { readFile } from 'fs';
-import * as winston from 'winston';
+const Koa = require('koa');
+const Router = require('koa-router');
+const bodyParser = require('koa-bodyparser');
+const fs = require('fs');
+const winston = require('winston');
 
 const app = new Koa();
 app.proxy = process.env.PROXY || false;
@@ -21,7 +21,7 @@ logger.add(winston.transports.File, {
 });
 logger.add(winston.transports.Console);
 
-router.post('/', async (ctx, next) => {
+router.post('/',  async (ctx, next) => {
   const body = ctx.request.body;
   if (!ctx.request.body || !body.user_id) {
     return ctx.status = 400;
@@ -54,14 +54,6 @@ async function handleAuthRequest(ctx) {
   ctx.body = JSON.stringify(response);
 }
 
-async function readFileAsync(file) {
-  return await new Promise(resolve => {
-    readFile(file, 'utf8', (err, data) => {
-      resolve(data);
-    });
-  });
-}
-
 async function isUserBlacklisted(userId) {
   const bannedUsersFile = await readFileAsync(process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
   if (!bannedUsersFile) {
@@ -69,6 +61,14 @@ async function isUserBlacklisted(userId) {
   }
   const bannedUsers = bannedUsersFile.toString().split('\n');
   return (bannedUsers.indexOf(userId) !== -1);
+}
+
+function readFileAsync(file) {
+  return new Promise(resolve => {
+    fs.readFile(file, 'utf8', (err, data) => {
+      resolve(data);
+    });
+  });
 }
 
 app.use(bodyParser());
@@ -81,4 +81,4 @@ const server = app.listen(process.env.PORT || 3000, () => {
   logger.info('Using %s for blacklisted users', process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
 });
 
-export default app;
+module.exports = app;

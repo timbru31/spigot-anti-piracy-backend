@@ -65,8 +65,7 @@ You recieve a JSON with either blacklisted true or false:
 
 ### Installation
 
-Ensure that your server you wish to run the piracy backend with is running at least **Node 4**
-This has been tested up to Node v7.2
+Ensure that your server you wish to run the piracy backend with is running at least **Node 7.6**
 
 
 #### Normal Installation
@@ -83,7 +82,7 @@ $ npm install -g spigot-anti-piracy-backend
 $ git clone https://github.com/timbru31/spigot-anti-piracy-backend.git
 $ cd spigot-anti-piracy-backend
 $ npm install
-$ npm run build
+$ npm run watch
 ```
 
 ### Usage
@@ -147,14 +146,14 @@ You can watch the ``app.js`` for file changes via the task
 ```shell
 $ npm run watch
 ```
-It uses [Nodemon](http://nodemon.io) to watch for file changes and re-starts the server using ``babel-node`` instead of ``node``.
+It uses [Nodemon](https://nodemon.io) to watch for file changes and re-starts the server if any are found.
 
-Test are run via
+Test are run with [Mocha](https://mochajs.org/) via
 ```shell
 $ npm run test
 ```
 
-The code is linted using ``ESLint`` using the ``babel-eslint`` parser.
+The code is linted using ``ESLint``.  
 Keep the warnings to zero. :smile:
 
 Please make sure they all pass and add new ones when you develop new stuff! :smile:
@@ -176,8 +175,6 @@ buyers.forEach((elem, index, arr) => {
 
 The project is written using bleeding edge software. I'm trying my best to keep it updated.
 [Greenkeeper](http://greenkeeper.io) is helping me to do so, by making pull request for dependency updates. Thanks for this great service! :rocket:
-
-When Node is ready for async/await, I'm planning to remove all the Babel stuff again. (as soon as Koa 2.0 becomes stable)
 
 ---
 Built by (c) Tim Brust and contributors. Released under the MIT license.

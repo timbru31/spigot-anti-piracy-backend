@@ -1,7 +1,7 @@
 process.env.BLACKLISTED_USERS_FILE = `${__dirname}/blacklisted_users.txt`;
 
-import app from '../src/app';
-import supertest from 'supertest';
+const app = require('../src/app');
+const supertest = require('supertest');
 
 const request = supertest.agent(app.listen());
 

@@ -1,5 +1,4 @@
 {
-  "parser": "babel-eslint",
   "rules": {
     "indent": [
       2,
@@ -28,10 +27,6 @@
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "modules": true
-    }
+    "ecmaVersion": 2017
   }
 }

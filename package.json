@@ -2,46 +2,35 @@
   "name": "spigot-anti-piracy-backend",
   "version": "0.6.1",
   "description": "A koajs application to blacklist leaked plugins",
-  "bin": "./dist/app.js",
+  "bin": "./src/app.js",
   "main": "./src/app.js",
   "scripts": {
-    "babel-node": "./node_modules/babel-cli/bin/babel-node.js",
-    "build": "babel ./src -d ./dist",
-    "coverage": "npm run babel-node -- ./node_modules/babel-istanbul/lib/cli.js cover _mocha",
-    "lint": "eslint --ignore-pattern ./dist --ignore-pattern coverage ./src",
-    "prepublish": "npm run build",
-    "start": "node ./dist/app.js",
+    "coverage": "istanbul cover _mocha",
+    "lint": "eslint --ignore-pattern coverage ./src",
+    "start": "node ./src/app.js",
     "release": "standard-version",
     "pretest": "npm run lint",
-    "test": "mocha --compilers js:babel-core/register",
-    "watch": "nodemon --exec npm run babel-node -- ./src/app.js"
+    "test": "mocha",
+    "watch": "nodemon ./src/app.js"
   },
   "engines": {
-    "node": ">=4.2"
+    "node": ">=7.6"
   },
   "author": {
     "name": "timbru31"
   },
   "dependencies": {
-    "babel-cli": "~6.23.0",
-    "babel-core": "~6.23.1",
-    "babel-plugin-transform-async-to-generator": "~6.22.0",
-    "babel-plugin-transform-runtime": "~6.23.0",
-    "babel-preset-es2015": "~6.22.0",
-    "babel-preset-stage-3": "~6.22.0",
-    "babel-runtime": "~6.23.0",
-    "koa": "~2.0.0",
+    "koa": "~2.0.1",
     "koa-bodyparser": "~3.2.0",
     "koa-router": "~7.1.0",
     "winston": "~2.3.1"
   },
   "devDependencies": {
-    "babel-eslint": "~7.1.1",
-    "babel-istanbul": "~0.12.1",
     "codeclimate-test-reporter": "~0.4.1",
     "coveralls": "~2.11.16",
     "cz-customizable": "~4.0.0",
-    "eslint": "~3.16.0",
+    "eslint": "~3.16.1",
+    "istanbul": "~1.1.0-alpha.1",
     "mocha": "~3.2.0",
     "nodemon": "~1.11.0",
     "should": "~11.2.0",
