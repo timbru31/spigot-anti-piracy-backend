@@ -19,7 +19,10 @@ logger.add(winston.transports.File, {
   tailable: true,
   json: process.env.JSON_LOG || true
 });
-logger.add(winston.transports.Console);
+
+if (process.env.NODE_ENV !== 'test') {
+  logger.add(winston.transports.Console);
+}
 
 router.post('/',  async (ctx, next) => {
   const body = ctx.request.body;
