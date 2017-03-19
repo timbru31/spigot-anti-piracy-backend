@@ -41,20 +41,7 @@ In the body, include the following information:
 user_id=foobar
 ```
 
-Example Java implementation
-```java
-String rawData = "user_id=";
-String userId = someObject().getUserID();
-String encodedData = null;
-try {
-    encodedData = rawData + URLEncoder.encode(userId, "UTF-8");
-} catch (UnsupportedEncodingException e) {
-    // catch error or not. up to you
-    return;
-}
-```
-
-That's it.
+Example Java implementation can be found in [docs/JavaExample.java].
 
 The service is only accepting POST, no GET.
 You recieve a JSON with either blacklisted true or false:
