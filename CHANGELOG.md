@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.0...v1.0.1) (2017-03-21)
+
+
+### Bug Fixes
+
+* **package:** update koa to version 2.1.0 (#140) ([9093ed2](https://github.com/timbru31/spigot-anti-piracy-backend/commit/9093ed2))
+* **package:** update koa to version 2.2.0 (#141) ([dd5a14d](https://github.com/timbru31/spigot-anti-piracy-backend/commit/dd5a14d))
+* **package:** update koa-bodyparser to version 4.0.0 (#136) ([ce84b73](https://github.com/timbru31/spigot-anti-piracy-backend/commit/ce84b73))
+* **package:** update koa-bodyparser to version 4.1.0 (#137) ([3377afb](https://github.com/timbru31/spigot-anti-piracy-backend/commit/3377afb))
+* **package:** update koa-bodyparser to version 4.2.0 (#143) ([18b70bb](https://github.com/timbru31/spigot-anti-piracy-backend/commit/18b70bb))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v0.6.1...v1.0.0) (2017-02-25)
 
