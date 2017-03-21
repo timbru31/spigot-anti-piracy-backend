@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "koa": "~2.2.0",
-    "koa-bodyparser": "~4.1.0",
+    "koa-bodyparser": "~4.2.0",
     "koa-router": "~7.1.0",
     "winston": "~2.3.1"
   },
