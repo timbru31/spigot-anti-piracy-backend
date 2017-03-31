@@ -17,17 +17,17 @@
 
 ### Motivation
 
-I'm sad that such a project is existing.
+I'm sad that such a project is existing.  
 Since 2011 I'm providing the community with a lot of free CraftBukkit plugins.
-Over a **million** downloads in total. That is a huge number.
+Over **one and a half million** downloads in total. That is a huge number.
 Nevertheless the community is in some points an unkind one.
 It does not matter how much spare time you spent, the update was never fast enough. And complaining is always easier than to say "thank you!".
 
 With the premium plugin solution, Spigot offers the developers a way to the get something back for their work.
 And in general a lot cheaper than hiring a private plugin developer.
-When you see your plugin only one week after the inital release on sites that offer leaked plugins, it's frustrating.
+When you see your plugin only one week after the initial release on sites that offer leaked plugins, it's frustrating.
 
-That's why I decided to make my own validation service, to blacklist the leaker a lot faster than sending DMCA request to OCH's.
+That's why I decided to make my own validation service - to blacklist the leaker is often a lot faster than sending DMCA requests to One-Click-Hosters (OCH).
 
 ### Description
 
@@ -41,10 +41,10 @@ In the body, include the following information:
 user_id=foobar
 ```
 
-Example Java implementation can be found in [docs/JavaExample.java](docs/JavaExample.java).
+An example Java implementation can be found in [docs/JavaExample.java](docs/JavaExample.java).
 
 The service is only accepting POST, no GET.
-You recieve a JSON with either blacklisted true or false:
+You receive a JSON with either blacklisted true or false:
 ```json
 {
   "blacklisted": true
@@ -83,9 +83,9 @@ Just use
 $ npm run start
 ```
 
-Configuration via enviorment variables
+Configuration via environment variables
 
-| Enviroment Variable    | Default            | Description                                                          |
+| Environment Variable   | Default            | Description                                                          |
 |:---------------------- |:------------------ |:-------------------------------------------------------------------- |
 | PORT                   | 3000               | Port to run the app on                                               |
 | BLACKLISTED_USERS_FILE | ./banned_users.txt | Blacklist file                                                       |
@@ -130,18 +130,18 @@ end script
 
 ### Development
 
-You can watch the ``app.js`` for file changes via the task
+You can watch the `app.js` for file changes via the task
 ```shell
 $ npm run watch
 ```
 It uses [Nodemon](https://nodemon.io) to watch for file changes and re-starts the server if any are found.
 
-Test are run with [Mocha](https://mochajs.org/) via
+Test are run with [Mocha](https://mochajs.org) via
 ```shell
 $ npm run test
 ```
 
-The code is linted using ``ESLint``.  
+The code is linted using `ESLint`.  
 Keep the warnings to zero. :smile:
 
 Please make sure they all pass and add new ones when you develop new stuff! :smile:
