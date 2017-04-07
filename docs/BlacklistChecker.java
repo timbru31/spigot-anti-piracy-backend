@@ -16,6 +16,8 @@ import com.google.gson.JsonParser;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import your.package.BlacklistedException;
+
 public class BlacklistChecker {
     private static final int TIMEOUT = 5000;
     private static final int SERVER_ERROR = 500;
