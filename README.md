@@ -41,7 +41,7 @@ In the body, include the following information:
 user_id=foobar
 ```
 
-An example Java implementation can be found in [docs/JavaExample.java](docs/JavaExample.java).
+An example Java implementation can be found in [docs/](docs/).
 
 The service is only accepting POST, no GET.
 You receive a JSON with either blacklisted true or false:
