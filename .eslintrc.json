@@ -1,4 +1,16 @@
 {
+  "extends": "eslint:recommended",
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "ecmaVersion": 2017
+  },
   "rules": {
     "indent": [
       2,
@@ -33,17 +45,5 @@
       2,
       "always"
     ]
-  },
-  "env": {
-    "es6": true,
-    "node": true,
-    "mocha": true
-  },
-  "ecmaFeatures": {
-    "modules": true
-  },
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "ecmaVersion": 2017
   }
 }
