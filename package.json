@@ -14,7 +14,7 @@
     "watch": "nodemon ./src/app.js"
   },
   "engines": {
-    "node": ">=7.6"
+    "node": ">=8"
   },
   "author": {
     "name": "timbru31"
