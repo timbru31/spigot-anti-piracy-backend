@@ -6,3 +6,4 @@ npm-debug.log
 *.txt
 *.log
 coverage/
+.nyc_output/

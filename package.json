@@ -5,12 +5,12 @@
   "bin": "./src/app.js",
   "main": "./src/app.js",
   "scripts": {
-    "coverage": "istanbul cover _mocha",
+    "coverage": "nyc report --reporter=lcov",
     "lint": "eslint --ignore-pattern coverage ./src",
     "start": "node ./src/app.js",
     "release": "standard-version",
     "pretest": "npm run lint",
-    "test": "mocha",
+    "test": "nyc mocha",
     "watch": "nodemon ./src/app.js"
   },
   "engines": {
@@ -31,9 +31,9 @@
     "coveralls": "~2.13.1",
     "cz-customizable": "~5.0.0",
     "eslint": "~4.0.0",
-    "istanbul": "~1.1.0-alpha.1",
     "mocha": "~3.4.2",
     "nodemon": "~1.11.0",
+    "nyc": "^11.0.2",
     "should": "~11.2.1",
     "standard-version": "~4.2.0",
     "supertest": "~3.0.0"
