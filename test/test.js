@@ -61,10 +61,10 @@ describe('Using HEAD', () => {
 });
 
 describe('Using OPTIONS', () => {
-  it('should return a 204 (No Content)', done => {
+  it('should return a 200 (OK)', done => {
     request
       .options('/')
-      .expect(204)
+      .expect(200)
       .end(done);
   });
 });
