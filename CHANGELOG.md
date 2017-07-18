@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.1...v1.0.2) (2017-07-18)
+
+
+### Bug Fixes
+
+* **deps:** update to koa-router[@7](https://github.com/7).2.1, fixes [#152](https://github.com/timbru31/spigot-anti-piracy-backend/issues/152) ([9e648d8](https://github.com/timbru31/spigot-anti-piracy-backend/commit/9e648d8))
+* **package:** update koa-router to version 7.2.0 ([#151](https://github.com/timbru31/spigot-anti-piracy-backend/issues/151)) ([fa8d9fb](https://github.com/timbru31/spigot-anti-piracy-backend/commit/fa8d9fb))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.0...v1.0.1) (2017-03-21)
 
