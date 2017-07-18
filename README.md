@@ -2,13 +2,16 @@
 [![Build Status](https://travis-ci.org/timbru31/spigot-anti-piracy-backend.svg?branch=master)](https://travis-ci.org/timbru31/spigot-anti-piracy-backend)
 [![Circle CI](https://img.shields.io/circleci/project/timbru31/spigot-anti-piracy-backend.svg)](https://circleci.com/gh/timbru31/spigot-anti-piracy-backend)
 [![Build status](https://ci.appveyor.com/api/projects/status/asl8iebx2n19kv4y?svg=true)](https://ci.appveyor.com/project/timbru31/spigot-anti-piracy-backend)
-[![Code Climate](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/gpa.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend)
+
 [![Dependency Status](https://david-dm.org/timbru31/spigot-anti-piracy-backend.svg)](https://david-dm.org/timbru31/spigot-anti-piracy-backend)
 [![devDependency Status](https://david-dm.org/timbru31/spigot-anti-piracy-backend/dev-status.svg)](https://david-dm.org/timbru31/spigot-anti-piracy-backend#info=devDependencies)
 [![Test Coverage](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/coverage.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/coverage)
 [![Coverage Status](https://coveralls.io/repos/github/timbru31/spigot-anti-piracy-backend/badge.svg?branch=master)](https://coveralls.io/github/timbru31/spigot-anti-piracy-backend?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/716c0578012b4237844e8ac680e0127c)](https://www.codacy.com/app/timbru31/spigot-anti-piracy-backend?utm_source=github.com&utm_medium=referral&utm_content=timbru31/spigot-anti-piracy-backend&utm_campaign=Badge_Coverage)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/716c0578012b4237844e8ac680e0127c)](https://www.codacy.com/app/timbru31/spigot-anti-piracy-backend?utm_source=github.com&utm_medium=referral&utm_content=timbru31/spigot-anti-piracy-backend&utm_campaign=badger)
+[![Code Climate](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/gpa.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend)
+[![Known Vulnerabilities](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend/badge.svg)](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend)
+
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/spigot-anti-piracy-backend.svg)](https://www.npmjs.com/package/spigot-anti-piracy-backend)
