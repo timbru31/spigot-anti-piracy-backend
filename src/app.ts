@@ -1,23 +1,24 @@
 #!/usr/bin/env node
 
-const Koa = require('koa');
-const Router = require('koa-router');
-const bodyParser = require('koa-bodyparser');
-const fs = require('fs');
-const winston = require('winston');
+import { readFile } from 'fs';
+import * as Koa from 'koa';
+import bodyParser = require('koa-bodyparser');
+import * as Router from 'koa-router';
 
-const app = new Koa();
-app.proxy = process.env.PROXY || false;
+import * as winston from 'winston';
+
+export const app = new Koa();
+app.proxy = Boolean(process.env.PROXY) || false;
 
 const router = new Router();
 
 const logger = new winston.Logger();
 logger.add(winston.transports.File, {
   filename: process.env.LOG_FILE || `${__dirname}/request.log`,
+  json: process.env.JSON_LOG || true,
   maxFiles: 5,
   maxsize: 5000000,
-  tailable: true,
-  json: process.env.JSON_LOG || true
+  tailable: true
 });
 
 if (process.env.NODE_ENV !== 'test') {
@@ -31,13 +32,14 @@ router.post('/',  async (ctx, next) => {
   }
   await handleAuthRequest(ctx);
 
+  // tslint:disable:next-line no-floating-promises
   next();
 });
 
-async function handleAuthRequest(ctx) {
+async function handleAuthRequest(ctx: Router.IRouterContext) {
   const request = ctx.request;
   const body = request.body;
-  const userId = body.user_id;
+  const userId: string = body.user_id;
   const ip = request.ip;
   const blacklisted = await isUserBlacklisted(userId);
   const response = {
@@ -47,17 +49,17 @@ async function handleAuthRequest(ctx) {
     ctx.status = 401;
   }
   logger.info('request from %s for user %s --> blacklisted %s', ip, userId, blacklisted, {
-    userId,
+    blacklisted,
     ip,
-    port: request.headers['bukkit-server-port'] || body.port,
     plugin: body.plugin,
-    blacklisted
+    port: request.headers['bukkit-server-port'] || body.port,
+    userId
   });
   ctx.set('Content-Type', 'application/json');
   ctx.body = JSON.stringify(response);
 }
 
-async function isUserBlacklisted(userId) {
+async function isUserBlacklisted(userId: string) {
   const bannedUsersFile = await readFileAsync(process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
   if (!bannedUsersFile) {
     return false;
@@ -66,9 +68,9 @@ async function isUserBlacklisted(userId) {
   return bannedUsers.includes(userId);
 }
 
-function readFileAsync(file) {
+function readFileAsync(file: string) {
   return new Promise(resolve => {
-    fs.readFile(file, 'utf8', (err, data) => {
+    readFile(file, 'utf8', (err, data) => {
       resolve(data);
     });
   });
@@ -83,5 +85,3 @@ const server = app.listen(process.env.PORT || 3000, () => {
   logger.info('Logging to %s', process.env.LOG_FILE || `${__dirname}/request.log`);
   logger.info('Using %s for blacklisted users', process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
 });
-
-module.exports = app;

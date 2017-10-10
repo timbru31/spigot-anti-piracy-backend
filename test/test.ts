@@ -1,8 +1,8 @@
 process.env.BLACKLISTED_USERS_FILE = `${__dirname}/blacklisted_users.txt`;
 process.env.NODE_ENV = 'test';
 
-const app = require('../src/app');
-const supertest = require('supertest');
+import * as supertest from 'supertest';
+import { app } from '../src/app';
 
 const request = supertest.agent(app.listen());
 
@@ -120,8 +120,8 @@ describe('Using POST', () => {
       .post('/')
       .type('form')
       .send({
-        user_id: '123',
-        bar: true
+        bar: true,
+        user_id: '123'
       })
       .expect(401, {
         blacklisted: true
@@ -146,9 +146,9 @@ describe('Using POST', () => {
     request
       .post('/')
       .send({
-        user_id: '123',
+        example: true,
         foo: 'bar',
-        example: true
+        user_id: '123'
       })
       .expect(200, {
         blacklisted: false

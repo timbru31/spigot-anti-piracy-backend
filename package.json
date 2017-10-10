@@ -2,16 +2,17 @@
   "name": "spigot-anti-piracy-backend",
   "version": "1.0.2",
   "description": "A koajs application to blacklist leaked plugins",
-  "bin": "./src/app.js",
-  "main": "./src/app.js",
+  "bin": "dist/app.js",
+  "main": "dist/app.js",
   "scripts": {
     "coverage": "nyc report --reporter=lcov",
-    "lint": "eslint --ignore-pattern coverage ./src",
-    "start": "node ./src/app.js",
+    "lint": "tslint -p tsconfig.test.json -c tslint.json --type-check -e '*.txt' '{src,test}/**/*.ts'",
+    "start": "ts-node src/app.ts",
+    "prepublish": "npm run test && tsc",
     "release": "standard-version",
     "pretest": "npm run lint",
     "test": "nyc mocha",
-    "watch": "nodemon ./src/app.js"
+    "watch": "nodemon --exec 'ts-node' src/app.ts"
   },
   "engines": {
     "node": ">=8"
@@ -23,20 +24,29 @@
     "koa": "~2.3.0",
     "koa-bodyparser": "~4.2.0",
     "koa-router": "~7.2.1",
-    "winston": "~2.3.1"
+    "winston": "~2.4.0"
   },
   "devDependencies": {
-    "codacy-coverage": "~2.0.2",
+    "@types/koa": "~2.0.39",
+    "@types/koa-bodyparser": "~3.0.25",
+    "@types/koa-router": "~7.0.23",
+    "@types/mocha": "~2.2.43",
+    "@types/node": "~8.0.33",
+    "@types/supertest": "^2.0.3",
+    "@types/winston": "~2.3.6",
+    "codacy-coverage": "~2.0.3",
     "codeclimate-test-reporter": "~0.5.0",
     "coveralls": "~3.0.0",
     "cz-customizable": "~5.2.0",
-    "eslint": "~4.8.0",
-    "mocha": "~3.5.0",
-    "nodemon": "~1.12.0",
-    "nyc": "^11.0.2",
-    "should": "~13.1.0",
+    "mocha": "~4.0.1",
+    "nodemon": "~1.12.1",
+    "nyc": "~11.2.1",
+    "should": "~13.1.1",
     "standard-version": "~4.2.0",
-    "supertest": "~3.0.0"
+    "supertest": "~3.0.0",
+    "ts-node": "~3.3.0",
+    "tslint": "~5.7.0",
+    "typescript": "~2.5.3"
   },
   "config": {
     "commitizen": {
@@ -54,5 +64,21 @@
     "minecraft",
     "ban",
     "leak"
-  ]
+  ],
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
 }
