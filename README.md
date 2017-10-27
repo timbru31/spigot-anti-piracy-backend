@@ -1,4 +1,6 @@
 # spigot-anti-piracy-backend
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/timbru31/spigot-anti-piracy-backend.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/timbru31/spigot-anti-piracy-backend.svg?branch=master)](https://travis-ci.org/timbru31/spigot-anti-piracy-backend)
 [![Circle CI](https://img.shields.io/circleci/project/timbru31/spigot-anti-piracy-backend.svg)](https://circleci.com/gh/timbru31/spigot-anti-piracy-backend)
 [![Build status](https://ci.appveyor.com/api/projects/status/asl8iebx2n19kv4y?svg=true)](https://ci.appveyor.com/project/timbru31/spigot-anti-piracy-backend)
