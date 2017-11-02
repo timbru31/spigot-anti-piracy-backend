@@ -1,7 +1,15 @@
 {
-  "extends": ["tslint:latest"],
+  "extends": [
+    "tslint:latest"
+  ],
   "rules": {
+    "arrow-parens": false,
+    "no-console": false,
     "no-floating-promises": true,
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ],
     "no-var-requires": false,
     "quotemark": [
       true,
@@ -13,8 +21,6 @@
     "variable-name": [
       true,
       "allow-leading-underscore"
-    ],
-    "arrow-parens": false,
-    "no-console": false
+    ]
   }
 }
