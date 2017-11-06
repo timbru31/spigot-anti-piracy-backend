@@ -19,7 +19,7 @@ test_script:
 
 environment:
   matrix:
-    - nodejs_version: "stable"
+    - nodejs_version: "lts"
 
 platform:
   - x86
