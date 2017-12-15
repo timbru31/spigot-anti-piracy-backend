@@ -8,7 +8,7 @@
     "coverage": "nyc report --reporter=lcov",
     "lint": "tslint -p tsconfig.test.json -e '*.txt' '{src,test}/**/*.ts'",
     "start": "ts-node src/app.ts",
-    "prepublish": "npm run test && tsc",
+    "prerelease": "npm run test && rm -rf dist && tsc",
     "release": "standard-version",
     "pretest": "npm run lint",
     "test": "nyc mocha",
