@@ -24,7 +24,7 @@
     "koa": "~2.5.0",
     "koa-bodyparser": "~4.2.0",
     "koa-router": "~7.4.0",
-    "winston": "~2.4.0"
+    "winston": "~3.0.0-rc2"
   },
   "devDependencies": {
     "@types/koa": "~2.0.42",
