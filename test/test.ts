@@ -1,8 +1,9 @@
-process.env.BLACKLISTED_USERS_FILE = `${__dirname}/blacklisted_users.txt`;
-process.env.NODE_ENV = 'test';
-
 import * as supertest from 'supertest';
 import { app } from '../src/app';
+import { join } from 'path';
+
+process.env.BLACKLISTED_USERS_FILE = join(__dirname, 'blacklisted_users.txt');
+process.env.NODE_ENV = 'test';
 
 const request = supertest.agent(app.listen());
 

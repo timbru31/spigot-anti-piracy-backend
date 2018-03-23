@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { readFile } from 'fs';
+import { join } from 'path';
 import * as Koa from 'koa';
 import bodyParser = require('koa-bodyparser');
 import * as Router from 'koa-router';
@@ -14,7 +15,7 @@ const router = new Router();
 
 const logger = new winston.Logger();
 logger.add(winston.transports.File, {
-  filename: process.env.LOG_FILE || `${__dirname}/request.log`,
+  filename: process.env.LOG_FILE || join(__dirname, 'request.log'),
   json: process.env.JSON_LOG || true,
   maxFiles: 5,
   maxsize: 5000000,
@@ -60,11 +61,11 @@ async function handleAuthRequest(ctx: Router.IRouterContext) {
 }
 
 async function isUserBlacklisted(userId: string) {
-  const bannedUsersFile = await readFileAsync(process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
+  const bannedUsersFile = await readFileAsync(process.env.BLACKLISTED_USERS_FILE || join(__dirname, 'banned_users.txt'));
   if (!bannedUsersFile) {
     return false;
   }
-  const bannedUsers = bannedUsersFile.toString().split('\n');
+  const bannedUsers = bannedUsersFile.toString().match(/[^\r\n]+/) || [];
   return bannedUsers.includes(userId);
 }
 
@@ -82,6 +83,6 @@ app.use(router.allowedMethods());
 
 const server = app.listen(process.env.PORT || 3000, () => {
   logger.info('Spigot Anti Piracy Backend listening at http://%s:%s', server.address().address, server.address().port);
-  logger.info('Logging to %s', process.env.LOG_FILE || `${__dirname}/request.log`);
-  logger.info('Using %s for blacklisted users', process.env.BLACKLISTED_USERS_FILE || `${__dirname}/banned_users.txt`);
+  logger.info('Logging to %s', process.env.LOG_FILE || join(__dirname, 'request.log'));
+  logger.info('Using %s for blacklisted users', process.env.BLACKLISTED_USERS_FILE || join(__dirname, 'banned_users.txt'));
 });
