@@ -1,6 +1,7 @@
 import * as supertest from 'supertest';
-import { app } from '../src/app';
+
 import { join } from 'path';
+import { app } from '../src/app';
 
 process.env.BLACKLISTED_USERS_FILE = join(__dirname, 'blacklisted_users.txt');
 process.env.NODE_ENV = 'test';

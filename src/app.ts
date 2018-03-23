@@ -2,6 +2,7 @@
 
 import { readFile } from 'fs';
 import { join } from 'path';
+
 import * as Koa from 'koa';
 import bodyParser = require('koa-bodyparser');
 import * as Router from 'koa-router';
@@ -61,7 +62,8 @@ async function handleAuthRequest(ctx: Router.IRouterContext) {
 }
 
 async function isUserBlacklisted(userId: string) {
-  const bannedUsersFile = await readFileAsync(process.env.BLACKLISTED_USERS_FILE || join(__dirname, 'banned_users.txt'));
+  const bannedFileLocation = process.env.BLACKLISTED_USERS_FILE || join(__dirname, 'banned_users.txt');
+  const bannedUsersFile = await readFileAsync(bannedFileLocation);
   if (!bannedUsersFile) {
     return false;
   }
@@ -82,7 +84,9 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 const server = app.listen(process.env.PORT || 3000, () => {
+  const loggerFileLocation = process.env.LOG_FILE || join(__dirname, 'request.log');
+  const bannedFileLocation = process.env.BLACKLISTED_USERS_FILE || join(__dirname, 'banned_users.txt');
   logger.info('Spigot Anti Piracy Backend listening at http://%s:%s', server.address().address, server.address().port);
-  logger.info('Logging to %s', process.env.LOG_FILE || join(__dirname, 'request.log'));
-  logger.info('Using %s for blacklisted users', process.env.BLACKLISTED_USERS_FILE || join(__dirname, 'banned_users.txt'));
+  logger.info('Logging to %s', loggerFileLocation);
+  logger.info('Using %s for blacklisted users', bannedFileLocation);
 });
