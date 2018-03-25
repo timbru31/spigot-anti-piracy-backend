@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.2...v1.0.3) (2018-03-25)
+
+
+### Bug Fixes
+
+* allow cross platform usage ([e31933f](https://github.com/timbru31/spigot-anti-piracy-backend/commit/e31933f))
+* lint ([63fcb28](https://github.com/timbru31/spigot-anti-piracy-backend/commit/63fcb28))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.1...v1.0.2) (2017-07-18)
 
