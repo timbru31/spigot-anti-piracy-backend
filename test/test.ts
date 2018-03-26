@@ -95,10 +95,21 @@ describe('Using POST', () => {
       .end(done);
   });
 
-  it('should return a 401 (Unauthorized) for a blacklisted user id', done => {
+  it('should return a 401 (Unauthorized) for a blacklisted user id (123)', done => {
     request
       .post('/')
       .send({ user_id: '123' })
+      .expect(401, {
+        blacklisted: true
+      })
+      .expect('Content-Type', /json/)
+      .end(done);
+  });
+
+  it('should return a 401 (Unauthorized) for a blacklisted user id (abc)', done => {
+    request
+      .post('/')
+      .send({ user_id: 'abc' })
       .expect(401, {
         blacklisted: true
       })
