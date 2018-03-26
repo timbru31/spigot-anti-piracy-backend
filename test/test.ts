@@ -128,6 +128,17 @@ describe('Using POST', () => {
       .end(done);
   });
 
+  it('should return a 200 (OK) for a non blacklisted user id with userId payload', done => {
+    request
+      .post('/')
+      .send({ userId: 'not-banned' })
+      .expect(200, {
+        blacklisted: false
+      })
+      .expect('Content-Type', /json/)
+      .end(done);
+  });
+
   it('should accept application/x-www-form-urlencoded', done => {
     request
       .post('/')

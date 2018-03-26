@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'test') {
 
 router.post('/',  async (ctx, next) => {
   const body = ctx.request.body;
-  if (!ctx.request.body || !body.user_id) {
+  if (!ctx.request.body || !body.user_id && !body.userId) {
     return ctx.status = 400;
   }
   await handleAuthRequest(ctx);
@@ -41,7 +41,7 @@ router.post('/',  async (ctx, next) => {
 async function handleAuthRequest(ctx: Router.IRouterContext) {
   const request = ctx.request;
   const body = request.body;
-  const userId: string = body.user_id;
+  const userId: string = body.user_id || body.userId;
   const ip = request.ip;
   const blacklisted = await isUserBlacklisted(userId);
   const response = {

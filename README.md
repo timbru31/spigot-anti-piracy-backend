@@ -43,6 +43,7 @@ In the body, include the following information:
 ```
 user_id=foobar
 ```
+(userId works, too)
 
 An example Java implementation can be found in [docs/](docs/).
 
