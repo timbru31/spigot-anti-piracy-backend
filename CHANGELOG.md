@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.3...v1.1.0) (2018-03-26)
+
+
+### Bug Fixes
+
+* correctly split newlines ([dd8e7b0](https://github.com/timbru31/spigot-anti-piracy-backend/commit/dd8e7b0))
+
+
+### Features
+
+* allow userId payload in body ([62b8c7e](https://github.com/timbru31/spigot-anti-piracy-backend/commit/62b8c7e))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.2...v1.0.3) (2018-03-25)
 
