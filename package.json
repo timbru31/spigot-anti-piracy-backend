@@ -34,7 +34,7 @@
     "@types/node": "~9.6.0",
     "@types/supertest": "~2.0.4",
     "@types/winston": "~2.3.8",
-    "codacy-coverage": "~2.1.1",
+    "codacy-coverage": "~3.0.0",
     "codeclimate-test-reporter": "~0.5.0",
     "coveralls": "~3.0.0",
     "cz-customizable": "~5.2.0",
