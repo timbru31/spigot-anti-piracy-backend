@@ -8,6 +8,7 @@ import bodyParser = require('koa-bodyparser');
 import * as Router from 'koa-router';
 
 import * as winston from 'winston';
+import { AddressInfo } from 'net';
 
 export const app = new Koa();
 app.proxy = Boolean(process.env.PROXY) || false;
@@ -86,7 +87,8 @@ app.use(router.allowedMethods());
 const server = app.listen(process.env.PORT || 3000, () => {
   const loggerFileLocation = process.env.LOG_FILE || join(__dirname, 'request.log');
   const bannedFileLocation = process.env.BLACKLISTED_USERS_FILE || join(__dirname, 'banned_users.txt');
-  logger.info('Spigot Anti Piracy Backend listening at http://%s:%s', server.address().address, server.address().port);
+  logger.info('Spigot Anti Piracy Backend listening at http://%s:%s',
+    (server.address() as AddressInfo).address, (server.address() as AddressInfo).port);
   logger.info('Logging to %s', loggerFileLocation);
   logger.info('Using %s for blacklisted users', bannedFileLocation);
 });
