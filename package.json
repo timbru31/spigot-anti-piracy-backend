@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/koa": "^2.0.44",
-    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-bodyparser": "^5.0.0",
     "@types/koa-router": "^7.0.28",
     "@types/mocha": "^5.2.0",
     "@types/node": "^10.1.0",
