@@ -4,10 +4,14 @@
     "module": "commonjs",
     "noImplicitAny": true,
     "noImplicitReturns": false,
+    "strictNullChecks": true,
     "noImplicitThis": true,
     "outDir": "dist",
     "removeComments": true,
-    "target": "es2016"
+    "target": "es2018",
+    "lib": [
+      "es2018"
+    ]
   },
   "include": [
     "src/*.ts"

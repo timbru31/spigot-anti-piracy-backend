@@ -5,9 +5,13 @@
     "noImplicitAny": true,
     "noImplicitReturns": false,
     "noImplicitThis": true,
+    "strictNullChecks": true,
     "outDir": "dist",
     "removeComments": true,
-    "target": "es2016"
+    "target": "es2018",
+    "lib": [
+      "es2018"
+    ]
   },
   "include": [
     "src/*.ts",

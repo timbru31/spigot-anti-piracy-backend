@@ -10,6 +10,13 @@ import * as Router from 'koa-router';
 import * as winston from 'winston';
 import { AddressInfo } from 'net';
 
+interface IRequestBody {
+  user_id?: string;
+  userId?: string;
+  plugin?: string;
+  port?: string;
+}
+
 export const app = new Koa();
 app.proxy = Boolean(process.env.PROXY) || false;
 
@@ -29,7 +36,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 router.post('/',  async (ctx, next) => {
-  const body = ctx.request.body;
+  const body = ctx.request.body as IRequestBody;
   if (!ctx.request.body || !body.user_id && !body.userId) {
     return ctx.status = 400;
   }
@@ -41,8 +48,8 @@ router.post('/',  async (ctx, next) => {
 
 async function handleAuthRequest(ctx: Router.IRouterContext) {
   const request = ctx.request;
-  const body = request.body;
-  const userId: string = body.user_id || body.userId;
+  const body = request.body as IRequestBody;
+  const userId = body.user_id! || body.userId!;
   const ip = request.ip;
   const blacklisted = await isUserBlacklisted(userId);
   const response = {
