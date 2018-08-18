@@ -13,6 +13,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend/badge.svg)](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend)
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/timbru31/spigot-anti-piracy-backend.svg)](https://greenkeeper.io/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/spigot-anti-piracy-backend.svg)](https://www.npmjs.com/package/spigot-anti-piracy-backend)
 

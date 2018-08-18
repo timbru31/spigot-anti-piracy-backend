@@ -24,7 +24,7 @@
     "koa": "^2.5.2",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
-    "winston": "^2.4.2"
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.46",
@@ -33,7 +33,6 @@
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.5.7",
     "@types/supertest": "^2.0.5",
-    "@types/winston": "^2.3.9",
     "codacy-coverage": "^3.0.0",
     "codeclimate-test-reporter": "^0.5.0",
     "coveralls": "^3.0.2",
