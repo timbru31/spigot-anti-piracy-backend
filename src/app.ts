@@ -22,17 +22,23 @@ app.proxy = Boolean(process.env.PROXY) || false;
 
 const router = new Router();
 
-const logger = new winston.Logger();
-logger.add(winston.transports.File, {
+const logger = winston.createLogger({
+  format: winston.format.combine(
+    winston.format.splat(),
+    winston.format.json()
+  ),
+});
+logger.add(new winston.transports.File({
   filename: process.env.LOG_FILE || join(__dirname, 'request.log'),
-  json: process.env.JSON_LOG || true,
   maxFiles: 5,
   maxsize: 5000000,
   tailable: true
-});
+}));
 
 if (process.env.NODE_ENV !== 'test') {
-  logger.add(winston.transports.Console);
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
 }
 
 router.post('/',  async (ctx, next) => {
