@@ -1,6 +1,6 @@
 {
   "name": "spigot-anti-piracy-backend",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A koajs application to blacklist leaked plugins",
   "bin": "dist/app.js",
   "main": "dist/app.js",

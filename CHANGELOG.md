@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.1.0...v1.2.0) (2018-08-18)
+
+
+### Features
+
+* update to winston 3.0 ([92bee05](https://github.com/timbru31/spigot-anti-piracy-backend/commit/92bee05))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.0.3...v1.1.0) (2018-03-26)
 
