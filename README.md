@@ -13,7 +13,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend/badge.svg)](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend)
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Greenkeeper badge](https://badges.greenkeeper.io/timbru31/spigot-anti-piracy-backend.svg)](https://greenkeeper.io/)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timbru31/spigot-anti-piracy-backend)](https://dependabot.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/spigot-anti-piracy-backend.svg)](https://www.npmjs.com/package/spigot-anti-piracy-backend)
 
@@ -165,9 +165,6 @@ buyers.forEach((elem, index, arr) => {
   arr[index] = parseInt(elem.pathname.replace(/\/members\/[-_a-zA-Z0-9]+\./, '').replace('/', ''));
 });
 ```
-
-The project is written using bleeding edge software. I'm trying my best to keep it updated.
-[Greenkeeper](http://greenkeeper.io) is helping me to do so, by making pull request for dependency updates. Thanks for this great service! :rocket:
 
 ---
 Built by (c) Tim Brust and contributors. Released under the MIT license.
