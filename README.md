@@ -135,7 +135,7 @@ end script
 
 ### Development
 
-You can watch the `app.js` for file changes via the task
+You can watch the `app.ts` for file changes via the task
 ```shell
 $ npm run watch
 ```
@@ -146,7 +146,7 @@ Test are run with [Mocha](https://mochajs.org) via
 $ npm run test
 ```
 
-The code is linted using `ESLint`.  
+The code is linted using `TSLint`.  
 Keep the warnings to zero. :smile:
 
 Please make sure they all pass and add new ones when you develop new stuff! :smile:

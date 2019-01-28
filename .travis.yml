@@ -1,16 +1,15 @@
 language: node_js
+
 node_js:
   - lts/*
+
 addons:
   code_climate:
     repo_token:
       secure: "dZd3/GfwG81rdPykXvE1fGZYMyC7XOIyAp1Z4WvRnabqNm9UkV9SMd7uoR3xvASEnXmp2dBy49qeP2O7u8/84c7dbikO/UerF7Y7mZKD+3gSPUg5gU6kZlyL415v1uLGrCRwAakERZDt6CmbiKyVKHJ3QkpIKYNOcIz9ALY8Rd9AQr2ZkdIy2FmqMVZh7yQSRgn2sq2hlQs3Uxsx0oPVCGxN2fIsfdh1T777G0CoGjPk8zKOilCcDqkIdbcalJslwBBF2gdSrBmPllHkcbT0Y59vYig/Bzc171xe6wnEnrheuQajrsjSxBOoVdgEZnHSVxQms+o+dAy69hC6D4MesoY1c4K9MmJHJuQ4YBW3nZLJOK1fE1ddpgXPs9fozwjF4XGj9RT8SSgW1XkdxGeHOL0ea/GmIOn9FCrB2F7/rSMX/kJ8SD21LgXnpVF18Go7KlA2ylaeUMA6clkMCQSveSp4jd69br4Uo+6IYuKrjjVwKx4wgu11hUklO3z/RAnuw3XKDVcW3DmRys+MyuOY5Pw+A4qga6r1PxMN5ZOU0N4lF7qrZNfKk3dspZdiTMVNoqKK+qZwy4+/UQdBpYN4iLxXVGnyxIJ8ECjVAiVf1b++QrZojNohoAeQLVHW6PRCp2AQoZV6WDD09KRxeZ5XeXJF0Rj4KkYE+BbCLc2pkj8="
-before_install:
-  - npm install -g greenkeeper-lockfile@1
-before_script: greenkeeper-lockfile-update
+
 after_script:
   - npm run coverage
   - codeclimate-test-reporter < ./coverage/lcov.info
   - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
   - 'cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage'
-  - greenkeeper-lockfile-upload
