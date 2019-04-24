@@ -9,12 +9,7 @@
     "outDir": "dist",
     "removeComments": true,
     "target": "es2018",
-    "lib": [
-      "dom",
-      "es2018"
-    ]
+    "lib": ["dom", "es2018"]
   },
-  "include": [
-    "src/*.ts"
-  ]
+  "include": ["src/*.ts"]
 }

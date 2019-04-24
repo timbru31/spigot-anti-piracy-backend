@@ -1,27 +1,14 @@
 {
-  "extends": [
-    "tslint:latest"
-  ],
+  "extends": ["tslint:latest"],
   "rules": {
     "arrow-parens": false,
     "no-console": false,
     "no-floating-promises": true,
-    "no-implicit-dependencies": [
-      true,
-      "dev"
-    ],
+    "no-implicit-dependencies": [true, "dev"],
     "no-var-requires": false,
     "ordered-imports": false,
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "trailing-comma": [
-      false
-    ],
-    "variable-name": [
-      true,
-      "allow-leading-underscore"
-    ]
+    "quotemark": [true, "single"],
+    "trailing-comma": [false],
+    "variable-name": [true, "allow-leading-underscore"]
   }
 }

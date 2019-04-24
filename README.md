@@ -1,4 +1,5 @@
 # spigot-anti-piracy-backend
+
 [![Build Status](https://travis-ci.org/timbru31/spigot-anti-piracy-backend.svg?branch=master)](https://travis-ci.org/timbru31/spigot-anti-piracy-backend)
 [![Circle CI](https://img.shields.io/circleci/project/timbru31/spigot-anti-piracy-backend.svg)](https://circleci.com/gh/timbru31/spigot-anti-piracy-backend)
 [![Build status](https://ci.appveyor.com/api/projects/status/asl8iebx2n19kv4y?svg=true)](https://ci.appveyor.com/project/timbru31/spigot-anti-piracy-backend)
@@ -10,7 +11,7 @@
 [![Code Climate](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend/badges/gpa.svg)](https://codeclimate.com/github/timbru31/spigot-anti-piracy-backend)
 [![Known Vulnerabilities](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend/badge.svg)](https://snyk.io/test/github/timbru31/spigot-anti-piracy-backend)
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://commitizen.github.io/cz-cli/)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=timbru31/spigot-anti-piracy-backend)](https://dependabot.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![npm](https://img.shields.io/npm/v/spigot-anti-piracy-backend.svg)](https://www.npmjs.com/package/spigot-anti-piracy-backend)
@@ -39,15 +40,18 @@ Please contact me on SpigotMC, I'd like to make the method not total publicly ac
 
 Once you retrieved the user id you can make a POST request the URL where you service runs.
 In the body, include the following information:
+
 ```
 user_id=foobar
 ```
+
 (userId works, too)
 
 An example Java implementation can be found in [docs/](docs/).
 
 The service is only accepting POST, no GET.
 You receive a JSON with either blacklisted true or false:
+
 ```json
 {
   "blacklisted": true
@@ -57,7 +61,6 @@ You receive a JSON with either blacklisted true or false:
 ### Installation
 
 Ensure that your server you wish to run the piracy backend with is running at least **Node 8 LTS**
-
 
 #### Normal Installation
 
@@ -82,6 +85,7 @@ You need to manually maintain a blacklisted users file.
 I'd recommend a simple text file, with one blacklisted user id per line.
 
 Just use
+
 ```shell
 $ npm run start
 ```
@@ -89,7 +93,7 @@ $ npm run start
 Configuration via environment variables
 
 | Environment Variable   | Default            | Description                                                          |
-|:---------------------- |:------------------ |:-------------------------------------------------------------------- |
+| :--------------------- | :----------------- | :------------------------------------------------------------------- |
 | PORT                   | 3000               | Port to run the app on                                               |
 | BLACKLISTED_USERS_FILE | ./banned_users.txt | Blacklist file                                                       |
 | LOG_FILE               | ./request.log      | Log file for requests                                                |
@@ -134,12 +138,15 @@ end script
 ### Development
 
 You can watch the `app.ts` for file changes via the task
+
 ```shell
 $ npm run watch
 ```
+
 It uses [Nodemon](https://nodemon.io) to watch for file changes and re-starts the server if any are found.
 
 Test are run with [Mocha](https://mochajs.org) via
+
 ```shell
 $ npm run test
 ```
@@ -157,12 +164,18 @@ Since this is a blacklist solution, a planned future is to validate the supplied
 Only when it's on the list, the plugin is allowed to start (as long, as the user is not blacklisted).
 
 The following document query can be used to retrieve an array of all user id's who bought the plugin:
+
 ```js
-let buyers = Array.from(document.querySelector('.memberList').querySelectorAll('a.username'));
+let buyers = Array.from(
+  document.querySelector('.memberList').querySelectorAll('a.username')
+);
 buyers.forEach((elem, index, arr) => {
-  arr[index] = parseInt(elem.pathname.replace(/\/members\/[-_a-zA-Z0-9]+\./, '').replace('/', ''));
+  arr[index] = parseInt(
+    elem.pathname.replace(/\/members\/[-_a-zA-Z0-9]+\./, '').replace('/', '')
+  );
 });
 ```
 
 ---
+
 Built by (c) Tim Brust and contributors. Released under the MIT license.
