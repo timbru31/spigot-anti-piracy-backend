@@ -1,7 +1,6 @@
 # spigot-anti-piracy-backend
 
 [![Build Status](https://travis-ci.org/timbru31/spigot-anti-piracy-backend.svg?branch=master)](https://travis-ci.org/timbru31/spigot-anti-piracy-backend)
-[![Circle CI](https://img.shields.io/circleci/project/timbru31/spigot-anti-piracy-backend.svg)](https://circleci.com/gh/timbru31/spigot-anti-piracy-backend)
 [![Build status](https://ci.appveyor.com/api/projects/status/asl8iebx2n19kv4y?svg=true)](https://ci.appveyor.com/project/timbru31/spigot-anti-piracy-backend)
 
 [![Dependency Status](https://david-dm.org/timbru31/spigot-anti-piracy-backend.svg)](https://david-dm.org/timbru31/spigot-anti-piracy-backend)
@@ -54,7 +53,7 @@ You receive a JSON with either blacklisted true or false:
 
 ```json
 {
-  "blacklisted": true
+    "blacklisted": true
 }
 ```
 
@@ -167,12 +166,14 @@ The following document query can be used to retrieve an array of all user id's w
 
 ```js
 let buyers = Array.from(
-  document.querySelector('.memberList').querySelectorAll('a.username')
+    document.querySelector('.memberList').querySelectorAll('a.username')
 );
 buyers.forEach((elem, index, arr) => {
-  arr[index] = parseInt(
-    elem.pathname.replace(/\/members\/[-_a-zA-Z0-9]+\./, '').replace('/', '')
-  );
+    arr[index] = parseInt(
+        elem.pathname
+            .replace(/\/members\/[-_a-zA-Z0-9]+\./, '')
+            .replace('/', '')
+    );
 });
 ```
 

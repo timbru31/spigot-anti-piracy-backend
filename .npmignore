@@ -19,6 +19,5 @@ appveyor.yml
 .nycrc
 .editorconfig
 tsconfig.test.json
-.circleci/config.yml
 .vscode/
 test/
