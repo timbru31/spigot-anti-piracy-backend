@@ -99,39 +99,25 @@ Configuration via environment variables
 | PROXY                  | false              | Tells Koa to run on proxy mode, for support for X-Forwarded Headers  |
 | JSON_LOG               | true               | Logs to the file in a JSON format, disable for human readable output |
 
-It's up to you, if you would like to spin the service up with e.g. a linux start script.
-
-For example here is an upstart script which runs the script as a non privileged user.
-
-You can read more about upstart [here](http://upstart.ubuntu.com/cookbook)
-
-(Script was inspired by [http://technosophos.com/2013/03/06/how-use-ubuntus-upstart-control-nodejs-forever.html](http://technosophos.com/2013/03/06/how-use-ubuntus-upstart-control-nodejs-forever.html))
+It's up to you, if you would like to spin the service up with e.g. a linux start script.  
+For example here is an systemd script which runs the script as a non privileged user.
 
 ```
-description "Spigot Anti-Piracy Backend Server"
-author "timbru31"
+[Unit]
+Description=Spigot Anti-Piracy Backend Server
+After=network.target
 
-# Start up when the system hits any normal runlevel, and
-# shuts down when the system goes to shutdown or reboot.
-start on filesystem or runlevel [2345]
-stop on runlevel [06]
+[Service]
+Environment=PORT=3005
+Environment=BLACKLISTED_USERS_FILE=/home/example/banned_users.txt
+Type=simple
+User=example
+# Assuming a global installation
+ExecStart=spigot-anti-piracy-backend
+Restart=on-failure
 
-setuid example
-# The user's home directory
-env HOME=/home/example
-env PORT=3005
-env BLACKLISTED_USERS_FILE=/home/example/banned_users.txt
-
-# automatically respawn
-respawn
-respawn limit 99 5
-
-# Send error messages to the console. Useful for debugging.
-#console output
-
-script
-  spigot-anti-piracy-backend
-end script
+[Install]
+WantedBy=multi-user.target
 ```
 
 ### Development
