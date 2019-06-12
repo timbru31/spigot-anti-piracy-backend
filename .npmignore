@@ -14,3 +14,11 @@ CHANGELOG.md
 .git/
 .github/
 appveyor.yml
+.nyc_output
+.prettierrc
+.nycrc
+.editorconfig
+tsconfig.test.json
+.circleci/config.yml
+.vscode/
+test/
