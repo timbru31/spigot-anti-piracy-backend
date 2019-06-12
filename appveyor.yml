@@ -12,7 +12,7 @@ install:
   - npm -v
   - npm install
 
-build: "off"
+build: off
 
 test_script:
   - cmd: npm test

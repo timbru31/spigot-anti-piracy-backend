@@ -1,0 +1,8 @@
+{
+  "include": ["src/**/*.ts"],
+  "extension": [".ts"],
+  "require": ["ts-node/register"],
+  "reporter": ["text-summary"],
+  "sourceMap": true,
+  "instrument": true
+}

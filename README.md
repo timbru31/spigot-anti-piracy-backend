@@ -60,7 +60,7 @@ You receive a JSON with either blacklisted true or false:
 
 ### Installation
 
-Ensure that your server you wish to run the piracy backend with is running at least **Node 8 LTS**
+Ensure that your server you wish to run the piracy backend with is running at least **Node 10 LTS**
 
 #### Normal Installation
 

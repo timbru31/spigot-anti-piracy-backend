@@ -9,10 +9,11 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 charset = utf-8
 indent_style = space
-indent_size = 2
+indent_size = 4
 
 [*.md]
 trim_trailing_whitespace = false
 
-[*.java]
-indent_size = 4
+[{package.json,.travis.yml,appveyor.yml}]
+indent_style = space
+indent_size = 2

@@ -15,7 +15,7 @@
     "watch": "nodemon --exec 'ts-node' src/app.ts"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "author": {
     "name": "timbru31"
@@ -28,21 +28,21 @@
   },
   "devDependencies": {
     "@types/koa": "^2.0.48",
-    "@types/koa-bodyparser": "^4.2.2",
+    "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.0.40",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^10.14.5",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.14.9",
     "@types/supertest": "^2.0.7",
-    "coveralls": "^3.0.3",
+    "coveralls": "^3.0.4",
     "mocha": "^6.1.4",
-    "nodemon": "^1.18.11",
-    "nyc": "^14.0.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
     "should": "^13.2.3",
     "standard-version": "^6.0.1",
     "supertest": "^4.0.2",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5"
+    "ts-node": "^8.2.0",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
   },
   "license": "MIT",
   "repository": "timbru31/spigot-anti-piracy-backend",
@@ -56,20 +56,9 @@
     "ban",
     "leak"
   ],
-  "nyc": {
-    "include": [
-      "src/**/*.ts"
-    ],
-    "extension": [
-      ".ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "reporter": [
-      "text-summary"
-    ],
-    "sourceMap": true,
-    "instrument": true
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "npx prettier --write CHANGELOG.md"
+    }
   }
 }
