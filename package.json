@@ -1,6 +1,6 @@
 {
   "name": "spigot-anti-piracy-backend",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "A koajs application to blacklist leaked plugins",
   "bin": "dist/app.js",
   "main": "dist/app.js",
@@ -9,7 +9,7 @@
     "lint": "tslint -p tsconfig.test.json -e '*.txt' '{src,test}/**/*.ts'",
     "start": "ts-node src/app.ts",
     "prerelease": "npm run test && rm -rf dist && tsc",
-    "release": "standard-version -S",
+    "release": "standard-version -s",
     "pretest": "npm run lint",
     "test": "nyc mocha",
     "watch": "nodemon --exec 'ts-node' src/app.ts"
