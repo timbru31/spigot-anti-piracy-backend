@@ -9,7 +9,7 @@
     "lint": "tslint -p tsconfig.test.json -e '*.txt' '{src,test}/**/*.ts'",
     "start": "ts-node src/app.ts",
     "prerelease": "npm run test && rm -rf dist && tsc",
-    "release": "standard-version",
+    "release": "standard-version -S",
     "pretest": "npm run lint",
     "test": "nyc mocha",
     "watch": "nodemon --exec 'ts-node' src/app.ts"
