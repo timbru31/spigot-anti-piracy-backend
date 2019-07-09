@@ -12,7 +12,9 @@
     "release": "standard-version -s",
     "pretest": "npm run lint",
     "test": "nyc mocha",
-    "watch": "nodemon --exec 'ts-node' src/app.ts"
+    "watch": "nodemon --exec 'ts-node' src/app.ts",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=10"
@@ -24,7 +26,8 @@
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "snyk": "^1.192.4"
   },
   "devDependencies": {
     "@types/koa": "^2.0.48",
@@ -60,5 +63,6 @@
     "scripts": {
       "postchangelog": "npx prettier --write CHANGELOG.md"
     }
-  }
+  },
+  "snyk": true
 }
