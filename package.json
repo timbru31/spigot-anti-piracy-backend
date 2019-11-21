@@ -35,7 +35,7 @@
     "@types/supertest": "^2.0.8",
     "coveralls": "^3.0.7",
     "mocha": "^6.2.2",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.0",
     "nyc": "^14.1.1",
     "should": "^13.2.3",
     "standard-version": "^7.0.0",
