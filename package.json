@@ -41,7 +41,7 @@
     "standard-version": "^7.0.1",
     "supertest": "^4.0.2",
     "ts-node": "^8.5.4",
-    "tslint": "^5.20.1",
+    "tslint": "^6.0.0",
     "typescript": "^3.7.3"
   },
   "license": "MIT",
