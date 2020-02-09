@@ -5,7 +5,7 @@ import { join } from 'path';
 
 import * as Koa from 'koa';
 import bodyParser = require('koa-bodyparser');
-import * as Router from 'koa-router';
+import * as Router from '@koa/router';
 
 import * as winston from 'winston';
 import { AddressInfo } from 'net';
@@ -56,7 +56,7 @@ router.post('/', async (ctx, next) => {
     next();
 });
 
-async function handleAuthRequest(ctx: Router.IRouterContext) {
+async function handleAuthRequest(ctx: Router.RouterContext) {
     const request = ctx.request;
     const body = request.body as IRequestBody;
     const userId = body.user_id! || body.userId!;
