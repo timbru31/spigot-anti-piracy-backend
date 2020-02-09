@@ -22,8 +22,8 @@
 I'm sad that such a project is existing.  
 Since 2011 I'm providing the community with a lot of free CraftBukkit plugins.
 Over **one and a half million** downloads in total. That is a huge number.
-Nevertheless the community is in some points an unkind one.
-It does not matter how much spare time you spent, the update was never fast enough. And complaining is always easier than to say "thank you!".
+Nevertheless, the community is in some points an unkind one.
+It does not matter how much spare time you spent working on the new version, the update was never fast enough. And complaining is always easier than saying 'thank you!'.
 
 With the premium plugin solution, Spigot offers the developers a way to the get something back for their work.
 And in general a lot cheaper than hiring a private plugin developer.
@@ -59,7 +59,7 @@ You receive a JSON with either blacklisted true or false:
 
 ### Installation
 
-Ensure that your server you wish to run the piracy backend with is running at least **Node 10 LTS**
+Ensure that your server you wish to run the piracy backend with is running at least **Node.js v12 LTS**
 
 #### Normal Installation
 
@@ -100,7 +100,7 @@ Configuration via environment variables
 | JSON_LOG               | true               | Logs to the file in a JSON format, disable for human readable output |
 
 It's up to you, if you would like to spin the service up with e.g. a linux start script.  
-For example here is an systemd script which runs the script as a non privileged user.
+For example, below is a systemd script which runs the script as a non-privileged user.
 
 ```
 [Unit]
@@ -148,7 +148,7 @@ Please make sure they all pass and add new ones when you develop new stuff! :smi
 Since this is a blacklist solution, a planned future is to validate the supplied user id against the buyers of the premium plugin.
 Only when it's on the list, the plugin is allowed to start (as long, as the user is not blacklisted).
 
-The following document query can be used to retrieve an array of all user id's who bought the plugin:
+The following document query can be used to retrieve an array of all user ids who bought the plugin:
 
 ```js
 let buyers = Array.from(

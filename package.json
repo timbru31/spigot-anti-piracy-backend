@@ -15,34 +15,32 @@
     "watch": "nodemon --exec 'ts-node' src/app.ts"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
-  "author": {
-    "name": "timbru31"
-  },
+  "author": "Tim Brust <github@timbrust.de>",
   "dependencies": {
+    "@koa/router": "^8.0.8",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
     "@types/koa": "^2.11.0",
     "@types/koa-bodyparser": "^4.3.0",
-    "@types/koa-router": "^7.0.42",
+    "@types/koa-router": "^7.4.0",
     "@types/mocha": "^7.0.1",
-    "@types/node": "^12.12.17",
+    "@types/node": "^12.12.26",
     "@types/supertest": "^2.0.8",
     "coveralls": "^3.0.9",
-    "mocha": "^7.0.0",
+    "mocha": "^7.0.1",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0",
     "should": "^13.2.3",
-    "standard-version": "^7.0.1",
+    "standard-version": "^7.1.0",
     "supertest": "^4.0.2",
-    "ts-node": "^8.5.4",
+    "ts-node": "^8.6.2",
     "tslint": "^6.0.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.5"
   },
   "license": "MIT",
   "repository": "timbru31/spigot-anti-piracy-backend",
