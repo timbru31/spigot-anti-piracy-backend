@@ -15,4 +15,3 @@ before_script:
 after_script:
   - npm run coverage
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
