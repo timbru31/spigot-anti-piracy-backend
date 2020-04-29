@@ -58,5 +58,6 @@
     "scripts": {
       "postchangelog": "npx prettier --write CHANGELOG.md"
     }
-  }
+  },
+  "funding": "https://github.com/sponsors/timbru31"
 }
