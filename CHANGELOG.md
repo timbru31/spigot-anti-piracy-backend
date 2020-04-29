@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v2.0.0...v2.1.0) (2020-04-29)
+
+### Features
+
+-   adds timestamp logging ([6abc218](https://github.com/timbru31/spigot-anti-piracy-backend/commit/6abc2187111c2c511ff26f917c7df9c452d3a7ce))
+
+### Bug Fixes
+
+-   checkout step ([4010996](https://github.com/timbru31/spigot-anti-piracy-backend/commit/401099600ddc263a821cb41470aa99f5f68f8fe0))
+-   GitHub Action ([3e3dd1d](https://github.com/timbru31/spigot-anti-piracy-backend/commit/3e3dd1d0cfaba80994487b96d8372f80f9e44383))
+
 ## [2.0.0](https://github.com/timbru31/spigot-anti-piracy-backend/compare/v1.2.1...v2.0.0) (2019-06-12)
 
 ### Build System
