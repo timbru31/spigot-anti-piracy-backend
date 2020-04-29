@@ -1,15 +1,18 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "noImplicitReturns": false,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "outDir": "dist",
-    "removeComments": true,
-    "target": "es2018",
-    "lib": ["dom", "es2018"]
-  },
-  "include": ["src/*.ts"]
+    "compilerOptions": {
+        "declaration": true,
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "noImplicitReturns": false,
+        "strictNullChecks": true,
+        "noImplicitThis": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "outDir": "dist",
+        "removeComments": true,
+        "target": "ES2020",
+        "lib": ["DOM", "ES2020"]
+    },
+    "include": ["src/*.ts"]
 }

@@ -24,23 +24,24 @@ const router = new Router();
 
 const logger = winston.createLogger({
     format: winston.format.combine(
+        winston.format.timestamp(),
         winston.format.splat(),
         winston.format.json()
-    )
+    ),
 });
 logger.add(
     new winston.transports.File({
         filename: process.env.LOG_FILE || join(__dirname, 'request.log'),
         maxFiles: 5,
         maxsize: 5000000,
-        tailable: true
+        tailable: true,
     })
 );
 
 if (process.env.NODE_ENV !== 'test') {
     logger.add(
         new winston.transports.Console({
-            format: winston.format.simple()
+            format: winston.format.simple(),
         })
     );
 }
@@ -63,7 +64,7 @@ async function handleAuthRequest(ctx: Router.RouterContext) {
     const ip = request.ip;
     const blacklisted = await isUserBlacklisted(userId);
     const response = {
-        blacklisted
+        blacklisted,
     };
     if (blacklisted) {
         ctx.status = 401;
@@ -78,7 +79,7 @@ async function handleAuthRequest(ctx: Router.RouterContext) {
             ip,
             plugin: body.plugin,
             port: request.headers['bukkit-server-port'] || body.port,
-            userId
+            userId,
         }
     );
     ctx.set('Content-Type', 'application/json');
