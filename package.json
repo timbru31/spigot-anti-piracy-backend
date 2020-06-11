@@ -31,7 +31,7 @@
     "@types/mocha": "^7.0.2",
     "@types/node": "^12.12.36",
     "@types/supertest": "^2.0.8",
-    "mocha": "^7.1.1",
+    "mocha": "^8.0.1",
     "nodemon": "^2.0.3",
     "nyc": "^15.0.1",
     "should": "^13.2.3",
