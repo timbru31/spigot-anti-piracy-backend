@@ -10,7 +10,6 @@
     "start": "ts-node src/app.ts",
     "prerelease": "npm run test && rm -rf dist && tsc",
     "release": "standard-version -s",
-    "pretest": "npm run lint",
     "test": "nyc mocha",
     "watch": "nodemon --exec 'ts-node' src/app.ts"
   },
@@ -43,9 +42,7 @@
   },
   "license": "MIT",
   "repository": "timbru31/spigot-anti-piracy-backend",
-  "bugs": {
-    "url": "https://github.com/timbru31/spigot-anti-piracy-backend/issues"
-  },
+  "bugs": "https://github.com/timbru31/spigot-anti-piracy-backend/issues",
   "keywords": [
     "spigot",
     "bukkit",
