@@ -1,7 +1,6 @@
 .*
 node_modules
 build
-dist
 npm-debug.log
 *.txt
 *.log
@@ -9,7 +8,6 @@ coverage
 tsconfig.json
 tslint.json
 CHANGELOG.md
-appveyor.yml
 tsconfig.test.json
 test
 docs

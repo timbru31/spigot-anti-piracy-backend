@@ -1,7 +1,9 @@
 # spigot-anti-piracy-backend
 
-[![Build Status](https://travis-ci.org/timbru31/spigot-anti-piracy-backend.svg?branch=master)](https://travis-ci.org/timbru31/spigot-anti-piracy-backend)
-[![Build status](https://ci.appveyor.com/api/projects/status/asl8iebx2n19kv4y?svg=true)](https://ci.appveyor.com/project/timbru31/spigot-anti-piracy-backend)
+[![Linting](https://github.com/timbru31/spigot-anti-piracy-backend/workflows/Linting/badge.svg)](https://github.com/timbru31/spigot-anti-piracy-backend/actions?query=workflow%3ALinting)
+[![Run a security audit](https://github.com/timbru31/spigot-anti-piracy-backend/workflows/Run%20a%20security%20audit/badge.svg)](https://github.com/timbru31/spigot-anti-piracy-backend/actions?query=workflow%3A%22Run+a+security+audit%22)
+[![Coverage](https://github.com/timbru31/spigot-anti-piracy-backend/workflows/Coverage/badge.svg)](https://github.com/timbru31/spigot-anti-piracy-backend/actions?query=workflow%3ACoverage)
+[![Run the testsuite](https://github.com/timbru31/spigot-anti-piracy-backend/workflows/Run%20the%20testsuite/badge.svg)](https://github.com/timbru31/spigot-anti-piracy-backend/actions?query=workflow%3A%22Run+the+testsuite%22)
 
 [![Dependency Status](https://david-dm.org/timbru31/spigot-anti-piracy-backend.svg)](https://david-dm.org/timbru31/spigot-anti-piracy-backend)
 [![devDependency Status](https://david-dm.org/timbru31/spigot-anti-piracy-backend/dev-status.svg)](https://david-dm.org/timbru31/spigot-anti-piracy-backend#info=devDependencies)
