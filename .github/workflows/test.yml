@@ -1,0 +1,25 @@
+name: Run the testsuite
+
+on: [push, pull_request]
+
+jobs:
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '14.x'
+
+            - name: Environment Information
+              run: |
+                  node --version
+                  npm --version
+
+            - name: Tetsuite
+              run: npm test

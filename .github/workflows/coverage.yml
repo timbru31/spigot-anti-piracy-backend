@@ -1,0 +1,30 @@
+name: Coverage
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '14.x'
+
+            - name: Environment Information
+              run: |
+                  node --version
+                  npm --version
+
+            - name: Test & publish code coverage
+              uses: paambaati/codeclimate-action@v2.7.5
+              env:
+                  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+              with:
+                  coverageCommand: npm run coverage
+                  debug: true
