@@ -22,4 +22,4 @@ jobs:
                   npm --version
 
             - name: Tetsuite
-              run: npm test
+              run: npm cit

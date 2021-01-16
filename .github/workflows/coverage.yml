@@ -21,6 +21,9 @@ jobs:
                   node --version
                   npm --version
 
+            - name: Setup project
+              run: npm ci
+
             - name: Test & publish code coverage
               uses: paambaati/codeclimate-action@v2.7.5
               env:
