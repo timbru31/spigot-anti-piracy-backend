@@ -5,7 +5,7 @@
   "bin": "dist/app.js",
   "main": "dist/app.js",
   "scripts": {
-    "coverage": "nyc report --reporter=lcov",
+    "coverage": "npm test && nyc report --reporter=lcov",
     "lint": "tslint -p tsconfig.test.json -e '*.txt' '{src,test}/**/*.ts'",
     "start": "ts-node src/app.ts",
     "prerelease": "npm run test && rm -rf dist && tsc",

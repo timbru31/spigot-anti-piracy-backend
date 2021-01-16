@@ -7,8 +7,8 @@ import * as Koa from 'koa';
 import bodyParser = require('koa-bodyparser');
 import * as Router from '@koa/router';
 
-import * as winston from 'winston';
 import { AddressInfo } from 'net';
+import { createLogger, format, transports } from 'winston';
 
 interface IRequestBody {
     user_id?: string;
@@ -22,15 +22,11 @@ app.proxy = Boolean(process.env.PROXY) || false;
 
 const router = new Router();
 
-const logger = winston.createLogger({
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.splat(),
-        winston.format.json()
-    ),
+const logger = createLogger({
+    format: format.combine(format.timestamp(), format.splat(), format.json()),
 });
 logger.add(
-    new winston.transports.File({
+    new transports.File({
         filename: process.env.LOG_FILE || join(__dirname, 'request.log'),
         maxFiles: 5,
         maxsize: 5000000,
@@ -40,8 +36,8 @@ logger.add(
 
 if (process.env.NODE_ENV !== 'test') {
     logger.add(
-        new winston.transports.Console({
-            format: winston.format.simple(),
+        new transports.Console({
+            format: format.simple(),
         })
     );
 }
