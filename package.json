@@ -18,7 +18,7 @@
   },
   "author": "Tim Brust <github@timbrust.de>",
   "dependencies": {
-    "@koa/router": "^10.0.0",
+    "@koa/router": "^11.0.1",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.3.0",
     "winston": "^3.2.1"
