@@ -14,7 +14,7 @@
     "watch": "nodemon --exec 'ts-node' src/app.ts"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "author": "Tim Brust <github@timbrust.de>",
   "dependencies": {
