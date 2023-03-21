@@ -3,10 +3,10 @@ name: Run a security audit
 on: [push, pull_request]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-            - run: npm audit
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm audit
