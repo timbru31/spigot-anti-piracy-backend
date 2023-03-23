@@ -94,7 +94,8 @@ async function isUserBlacklisted(userId: string) {
         if (!bannedUsersFile) {
             return false;
         }
-        const bannedUsers = bannedUsersFile.toString().match(/[^\r\n]+/g) || [];
+        const bannedUsers =
+            (bannedUsersFile.toString().match(/[^\r\n]+/g) as string[]) || [];
         return bannedUsers.includes(userId);
     } catch {
         return false;
