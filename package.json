@@ -31,7 +31,7 @@
     "@types/node": "^16.18.18",
     "@types/supertest": "^2.0.12",
     "mocha": "^10.2.0",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.1",
     "nyc": "^15.1.0",
     "should": "^13.2.3",
     "standard-version": "^9.5.0",
