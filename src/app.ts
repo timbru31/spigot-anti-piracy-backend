@@ -25,6 +25,7 @@ const router = new Router();
 const logger = createLogger({
     format: format.combine(format.timestamp(), format.splat(), format.json()),
 });
+
 logger.add(
     new transports.File({
         filename: process.env.LOG_FILE || join(__dirname, 'request.log'),
