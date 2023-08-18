@@ -6,7 +6,7 @@ npm-debug.log
 *.log
 coverage
 tsconfig.json
-tslint.json
+.eslintrc.js
 CHANGELOG.md
 tsconfig.test.json
 test

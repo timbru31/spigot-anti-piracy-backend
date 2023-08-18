@@ -6,7 +6,7 @@
   "main": "dist/app.js",
   "scripts": {
     "coverage": "npm test && nyc report --reporter=lcov",
-    "lint": "tslint -p tsconfig.test.json -e '*.txt' '{src,test}/**/*.ts'",
+    "lint": "eslint 'src/**/*.ts' 'test/**/*.ts'",
     "start": "ts-node src/app.ts",
     "prerelease": "npm run test && rm -rf dist && tsc",
     "release": "standard-version -s",
@@ -19,17 +19,21 @@
   "author": "Tim Brust <github@timbrust.de>",
   "dependencies": {
     "@koa/router": "^12.0.0",
-    "koa": "^2.14.1",
-    "koa-bodyparser": "^4.4.0",
-    "winston": "^3.8.2"
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1",
+    "winston": "^3.10.0"
   },
   "devDependencies": {
     "@types/koa": "^2.13.5",
     "@types/koa-bodyparser": "^4.3.10",
     "@types/koa__router": "^12.0.0",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^18.16.19",
+    "@types/node": "^18.17.5",
     "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "mocha": "^10.2.0",
     "nodemon": "^3.0.1",
     "nyc": "^15.1.0",
@@ -37,8 +41,7 @@
     "standard-version": "^9.5.0",
     "supertest": "^6.3.3",
     "ts-node": "^10.9.1",
-    "tslint": "^6.1.3",
-    "typescript": "^5.0.2"
+    "typescript": "^5.1.6"
   },
   "license": "MIT",
   "repository": "timbru31/spigot-anti-piracy-backend",

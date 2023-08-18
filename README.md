@@ -134,7 +134,7 @@ Test are run with [Mocha](https://mochajs.org) via
 $ npm run test
 ```
 
-The code is linted using `TSLint`.  
+The code is linted using `ESLint`.  
 Keep the warnings to zero. :smile:
 
 Please make sure they all pass and add new ones when you develop new stuff! :smile:

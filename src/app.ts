@@ -32,14 +32,14 @@ logger.add(
         maxFiles: 5,
         maxsize: 5000000,
         tailable: true,
-    })
+    }),
 );
 
 if (process.env.NODE_ENV !== 'test') {
     logger.add(
         new transports.Console({
             format: format.simple(),
-        })
+        }),
     );
 }
 
@@ -50,8 +50,7 @@ router.post('/', async (ctx, next) => {
     }
     await handleAuthRequest(ctx);
 
-    // tslint:disable:next-line no-floating-promises
-    next();
+    await next();
 });
 
 async function handleAuthRequest(ctx: Router.RouterContext) {
@@ -77,7 +76,7 @@ async function handleAuthRequest(ctx: Router.RouterContext) {
             plugin: body.plugin,
             port: request.headers['bukkit-server-port'] || body.port,
             userId,
-        }
+        },
     );
     ctx.set('Content-Type', 'application/json');
     ctx.body = JSON.stringify(response);
@@ -90,7 +89,7 @@ async function isUserBlacklisted(userId: string) {
     try {
         const bannedUsersFile = await promises.readFile(
             bannedFileLocation,
-            'utf-8'
+            'utf-8',
         );
         if (!bannedUsersFile) {
             return false;
@@ -116,7 +115,7 @@ const server = app.listen(process.env.PORT || 3000, () => {
     logger.info(
         'Spigot Anti Piracy Backend listening at http://%s:%s',
         (server.address() as AddressInfo).address,
-        (server.address() as AddressInfo).port
+        (server.address() as AddressInfo).port,
     );
     logger.info('Logging to %s', loggerFileLocation);
     logger.info('Using %s for blacklisted users', bannedFileLocation);
