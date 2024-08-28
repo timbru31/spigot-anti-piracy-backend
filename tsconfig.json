@@ -11,8 +11,8 @@
         "noUnusedParameters": true,
         "outDir": "dist",
         "removeComments": true,
-        "target": "ES2022",
-        "lib": ["DOM", "ES2022"]
+        "target": "ES2023",
+        "lib": ["DOM", "ES2023"]
     },
     "include": ["src/*.ts"]
 }

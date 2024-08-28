@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
-import { promises } from 'fs';
-import { join } from 'path';
-
-import * as Koa from 'koa';
-import bodyParser = require('koa-bodyparser');
 import * as Router from '@koa/router';
-
-import { AddressInfo } from 'net';
+import * as Koa from 'koa';
+import * as bodyParser from 'koa-bodyparser';
+import { promises } from 'node:fs';
+import { AddressInfo } from 'node:net';
+import { join } from 'node:path';
 import { createLogger, format, transports } from 'winston';
 
 interface IRequestBody {
@@ -28,7 +26,7 @@ const logger = createLogger({
 
 logger.add(
     new transports.File({
-        filename: process.env.LOG_FILE || join(__dirname, 'request.log'),
+        filename: process.env.LOG_FILE ?? join(__dirname, 'request.log'),
         maxFiles: 5,
         maxsize: 5000000,
         tailable: true,
@@ -56,7 +54,11 @@ router.post('/', async (ctx, next) => {
 async function handleAuthRequest(ctx: Router.RouterContext) {
     const request = ctx.request;
     const body = request.body as IRequestBody;
-    const userId = body.user_id! || body.userId!;
+    const userId = body.user_id ?? body.userId;
+    if (!userId) {
+        ctx.status = 400;
+        return;
+    }
     const ip = request.ip;
     const blacklisted = await isUserBlacklisted(userId);
     const response = {
@@ -74,7 +76,7 @@ async function handleAuthRequest(ctx: Router.RouterContext) {
             blacklisted,
             ip,
             plugin: body.plugin,
-            port: request.headers['bukkit-server-port'] || body.port,
+            port: request.headers['bukkit-server-port'] ?? body.port,
             userId,
         },
     );
@@ -84,7 +86,7 @@ async function handleAuthRequest(ctx: Router.RouterContext) {
 
 async function isUserBlacklisted(userId: string) {
     const bannedFileLocation =
-        process.env.BLACKLISTED_USERS_FILE ||
+        process.env.BLACKLISTED_USERS_FILE ??
         join(__dirname, 'banned_users.txt');
     try {
         const bannedUsersFile = await promises.readFile(
@@ -94,8 +96,9 @@ async function isUserBlacklisted(userId: string) {
         if (!bannedUsersFile) {
             return false;
         }
-        const bannedUsers =
-            (bannedUsersFile.toString().match(/[^\r\n]+/g) as string[]) || [];
+        const bannedUsers = bannedUsersFile
+            .toString()
+            .match(/[^\r\n]+/g) as string[];
         return bannedUsers.includes(userId);
     } catch {
         return false;
@@ -106,11 +109,11 @@ app.use(bodyParser());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const server = app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT ?? 3000, () => {
     const loggerFileLocation =
-        process.env.LOG_FILE || join(__dirname, 'request.log');
+        process.env.LOG_FILE ?? join(__dirname, 'request.log');
     const bannedFileLocation =
-        process.env.BLACKLISTED_USERS_FILE ||
+        process.env.BLACKLISTED_USERS_FILE ??
         join(__dirname, 'banned_users.txt');
     logger.info(
         'Spigot Anti Piracy Backend listening at http://%s:%s',
