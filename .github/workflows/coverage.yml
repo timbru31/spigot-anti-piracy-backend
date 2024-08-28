@@ -2,8 +2,6 @@ name: Coverage
 
 on:
   push:
-    branches:
-      - master
 
 jobs:
   build:
@@ -31,3 +29,4 @@ jobs:
         with:
           coverageCommand: npm run coverage
           coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov
+          debug: true
